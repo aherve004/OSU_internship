@@ -128,14 +128,14 @@ protected:
         : name(_name),
           formula(nullptr),
           hashIndex(_hashIndex),
-          cachingType(NONE),
+      cachingType(NONE){}
       //kleeneCachingType(NONE) {} //Alex : removing Kleene things
 
     Evaluatable(std::string _name, LogicalExpression* _formula, int _hashIndex)
         : name(_name),
           formula(_formula),
           hashIndex(_hashIndex),
-          cachingType(NONE),
+      cachingType(NONE){}
       //kleeneCachingType(NONE) {} //Alex : removing Kleene things
 };
 
