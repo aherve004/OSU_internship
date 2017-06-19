@@ -24,9 +24,14 @@ public:
                           ActionState const& actions) const;
     virtual void evaluateToPD(DiscretePD& res, State const& current,
                               ActionState const& actions) const;
+    //Alex : removing Kleene things
+    //->start
+    /*
     virtual void evaluateToKleene(std::set<double>& res,
                                   KleeneState const& current,
                                   ActionState const& actions) const;
+    */
+    //Alex->end
 
     virtual void print(std::ostream& out) const = 0;
 };
@@ -58,8 +63,14 @@ public:
                   ActionState const& actions) const;
     void evaluateToPD(DiscretePD& res, State const& current,
                       ActionState const& actions) const;
+ 
+    //Alex : removing Kleene things
+    //->start
+    /*
     void evaluateToKleene(std::set<double>& res, KleeneState const& current,
                           ActionState const& actions) const;
+    */
+    //Alex->end
 };
 
 class ProbabilisticStateFluent : public StateFluent {
@@ -72,8 +83,15 @@ public:
                   ActionState const& actions) const;
     void evaluateToPD(DiscretePD& res, State const& current,
                       ActionState const& actions) const;
+
+    //Alex : removing Kleene things
+    //->start
+    /*
+
     void evaluateToKleene(std::set<double>& res, KleeneState const& current,
                           ActionState const& actions) const;
+    */
+    //Alex->end
 };
 
 class ActionFluent : public LogicalExpression {
@@ -90,8 +108,14 @@ public:
                   ActionState const& actions) const;
     void evaluateToPD(DiscretePD& res, State const& current,
                       ActionState const& actions) const;
+
+    //Alex : removing Kleene things
+    //->start
+    /*
     void evaluateToKleene(std::set<double>& res, KleeneState const& current,
                           ActionState const& actions) const;
+    */
+    //Alex->end
 
     void print(std::ostream& out) const;
 };
@@ -106,8 +130,14 @@ public:
                   ActionState const& actions) const;
     void evaluateToPD(DiscretePD& res, State const& current,
                       ActionState const& actions) const;
+ 
+    //Alex : removing Kleene things
+    //->start
+    /*
     void evaluateToKleene(std::set<double>& res, KleeneState const& current,
                           ActionState const& actions) const;
+    */
+    //Alex->end
 
     void print(std::ostream& out) const;
 };
@@ -126,8 +156,14 @@ public:
                   ActionState const& actions) const;
     void evaluateToPD(DiscretePD& res, State const& current,
                       ActionState const& actions) const;
+
+    //Alex : removing Kleene things
+    //->start
+    /*
     void evaluateToKleene(std::set<double>& res, KleeneState const& current,
                           ActionState const& actions) const;
+    */
+    //Alex->end
 
     void print(std::ostream& out) const;
 };
@@ -142,8 +178,14 @@ public:
                   ActionState const& actions) const;
     void evaluateToPD(DiscretePD& res, State const& current,
                       ActionState const& actions) const;
+
+    //Alex : removing Kleene things
+    //->start
+    /*
     void evaluateToKleene(std::set<double>& res, KleeneState const& current,
                           ActionState const& actions) const;
+    */
+    //Alex->end
 
     void print(std::ostream& out) const;
 };
@@ -158,8 +200,14 @@ public:
                   ActionState const& actions) const;
     void evaluateToPD(DiscretePD& res, State const& current,
                       ActionState const& actions) const;
+
+    //Alex : removing Kleene things
+    //->start
+    /*
     void evaluateToKleene(std::set<double>& res, KleeneState const& current,
                           ActionState const& actions) const;
+    */
+    //Alex->end
 
     void print(std::ostream& out) const;
 };
@@ -175,8 +223,14 @@ public:
                   ActionState const& actions) const;
     void evaluateToPD(DiscretePD& res, State const& current,
                       ActionState const& actions) const;
+
+    //Alex : removing Kleene things
+    //->start
+    /*
     void evaluateToKleene(std::set<double>& res, KleeneState const& current,
                           ActionState const& actions) const;
+    */
+    //Alex->end
 
     void print(std::ostream& out) const;
 };
@@ -191,8 +245,14 @@ public:
                   ActionState const& actions) const;
     void evaluateToPD(DiscretePD& res, State const& current,
                       ActionState const& actions) const;
+
+    //Alex : removing Kleene things
+    //->start
+    /*
     void evaluateToKleene(std::set<double>& res, KleeneState const& current,
                           ActionState const& actions) const;
+    */
+    //Alex->end
 
     void print(std::ostream& out) const;
 };
@@ -208,8 +268,14 @@ public:
                   ActionState const& actions) const;
     void evaluateToPD(DiscretePD& res, State const& current,
                       ActionState const& actions) const;
+
+    //Alex : removing Kleene things
+    //->start
+    /*
     void evaluateToKleene(std::set<double>& res, KleeneState const& current,
                           ActionState const& actions) const;
+    */
+    //Alex->end
 
     void print(std::ostream& out) const;
 };
@@ -225,8 +291,14 @@ public:
                   ActionState const& actions) const;
     void evaluateToPD(DiscretePD& res, State const& current,
                       ActionState const& actions) const;
+
+    //Alex : removing Kleene things
+    //->start
+    /*
     void evaluateToKleene(std::set<double>& res, KleeneState const& current,
                           ActionState const& actions) const;
+    */
+    //Alex->end
 
     void print(std::ostream& out) const;
 };
@@ -241,8 +313,14 @@ public:
                   ActionState const& actions) const;
     void evaluateToPD(DiscretePD& res, State const& current,
                       ActionState const& actions) const;
+
+    //Alex : removing Kleene things
+    //->start
+    /*
     void evaluateToKleene(std::set<double>& res, KleeneState const& current,
                           ActionState const& actions) const;
+    */
+    //Alex->end
 
     void print(std::ostream& out) const;
 };
@@ -257,8 +335,14 @@ public:
                   ActionState const& actions) const;
     void evaluateToPD(DiscretePD& res, State const& current,
                       ActionState const& actions) const;
+
+    //Alex : removing Kleene things
+    //->start
+    /*
     void evaluateToKleene(std::set<double>& res, KleeneState const& current,
                           ActionState const& actions) const;
+    */
+    //ALex->end
 
     void print(std::ostream& out) const;
 };
@@ -273,8 +357,14 @@ public:
                   ActionState const& actions) const;
     void evaluateToPD(DiscretePD& res, State const& current,
                       ActionState const& actions) const;
+
+    //Alex : removing Kleene things
+    //->start
+    /*
     void evaluateToKleene(std::set<double>& res, KleeneState const& current,
                           ActionState const& actions) const;
+    */
+    //Alex->end
 
     void print(std::ostream& out) const;
 };
@@ -289,8 +379,14 @@ public:
                   ActionState const& actions) const;
     void evaluateToPD(DiscretePD& res, State const& current,
                       ActionState const& actions) const;
+
+    //Alex : removing Kleene things
+    //->start
+    /*
     void evaluateToKleene(std::set<double>& res, KleeneState const& current,
                           ActionState const& actions) const;
+    */
+    //Alex->end
 
     void print(std::ostream& out) const;
 };
@@ -309,8 +405,14 @@ public:
                   ActionState const& actions) const;
     void evaluateToPD(DiscretePD& res, State const& current,
                       ActionState const& actions) const;
+
+    //Alex : removing Kleene things
+    //->start
+    /*
     void evaluateToKleene(std::set<double>& res, KleeneState const& current,
                           ActionState const& actions) const;
+    */
+    //Alex->end
 
     void print(std::ostream& out) const;
 };
@@ -325,8 +427,14 @@ public:
                   ActionState const& actions) const;
     void evaluateToPD(DiscretePD& res, State const& current,
                       ActionState const& actions) const;
+
+    //Alex : removing Kleene things
+    //->start
+    /*
     void evaluateToKleene(std::set<double>& res, KleeneState const& current,
                           ActionState const& actions) const;
+    */
+    //Alex->end
 
     void print(std::ostream& out) const;
 };
@@ -345,8 +453,14 @@ public:
                   ActionState const& actions) const;
     void evaluateToPD(DiscretePD& res, State const& current,
                       ActionState const& actions) const;
+
+    //Alex : removing Kleene things
+    //->start
+    /*
     void evaluateToKleene(std::set<double>& res, KleeneState const& current,
                           ActionState const& actions) const;
+    */
+    //Alex->end
 
     void print(std::ostream& out) const;
 };
@@ -364,8 +478,14 @@ public:
                   ActionState const& actions) const;
     void evaluateToPD(DiscretePD& res, State const& current,
                       ActionState const& actions) const;
+
+    //Alex : removing Kleene things
+    //->start
+    /*
     void evaluateToKleene(std::set<double>& res, KleeneState const& current,
                           ActionState const& actions) const;
+    */
+    //Alex->end
 
     void print(std::ostream& out) const;
 };
@@ -387,8 +507,14 @@ public:
                   ActionState const& actions) const;
     void evaluateToPD(DiscretePD& res, State const& current,
                       ActionState const& actions) const;
+
+    //Alex : removing Kleene things
+    //->start
+    /*
     void evaluateToKleene(std::set<double>& res, KleeneState const& current,
                           ActionState const& actions) const;
+    */
+    //ALex->end
 
     void print(std::ostream& out) const;
 };

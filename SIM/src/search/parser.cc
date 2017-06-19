@@ -37,11 +37,17 @@ void Parser::parseTask(map<string, int>& stateVariableIndices,
     desc >> SearchEngine::numberOfActions;
 
     desc >> State::numberOfStateFluentHashKeys;
+
+    //Alex : removing Kleene things
+    //->start
+    /*
     KleeneState::numberOfStateFluentHashKeys =
         State::numberOfStateFluentHashKeys;
 
     KleeneState::stateSize = State::numberOfDeterministicStateFluents +
                              State::numberOfProbabilisticStateFluents;
+    */
+    //Alex->end
 
     // Parse initial state
     vector<double> initialValsOfDeterministicStateFluents(
@@ -61,7 +67,13 @@ void Parser::parseTask(map<string, int>& stateVariableIndices,
     // Parse task properties
     desc >> SearchEngine::taskIsDeterministic;
     desc >> State::stateHashingPossible;
+    
+    //Alex : removing Kleene things
+    //->start
+    /*
     desc >> KleeneState::stateHashingPossible;
+    */
+    //Alex->end
 
 		//Murugeswari
 		/*
@@ -148,7 +160,11 @@ void Parser::parseTask(map<string, int>& stateVariableIndices,
     //assert(SearchEngine::determinizedCPFs.size() ==
       //     State::numberOfProbabilisticStateFluents);
 
+    //Alex : removing Kleene things
+    //->start
+    /*
     assert(SearchEngine::allCPFs.size() == KleeneState::stateSize);
+    *///Alex->end
 
     // All fluents have been created -> create the CPF formulas
     for (size_t i = 0; i < State::numberOfDeterministicStateFluents; ++i) {
@@ -190,10 +206,14 @@ void Parser::parseTask(map<string, int>& stateVariableIndices,
     State::stateFluentHashKeysOfProbabilisticStateFluents.resize(
         State::numberOfProbabilisticStateFluents);
 
+    //Alex : removing Kleene things
+    //->start
+    /*
     if (KleeneState::stateHashingPossible) {
         KleeneState::hashKeyBases.resize(KleeneState::stateSize);
     }
     KleeneState::indexToStateFluentHashKeyMap.resize(KleeneState::stateSize);
+    *///Alex->end
 
     parseHashKeys(desc);
 
@@ -435,6 +455,9 @@ void Parser::parseCachingType(stringstream& desc,
         }
     }
 
+    //Alex : removing Kleene things
+    //->start
+    /*
     desc >> cachingType;
     if (cachingType == "NONE") {
         detEval->kleeneCachingType = Evaluatable::NONE;
@@ -464,6 +487,7 @@ void Parser::parseCachingType(stringstream& desc,
             detEval->evaluationCacheMap.reserve(256279);
         }
     }
+    *///Alex->end
 }
 
 void Parser::parseActionHashKeyMap(stringstream& desc,
@@ -534,9 +558,13 @@ void Parser::parseHashKeys(stringstream& desc) const {
             }
         }
 
+	//Alex : removing Kleene things
+	//->start
+	/*
         if (KleeneState::stateHashingPossible) {
             desc >> KleeneState::hashKeyBases[index];
         }
+	*///Alex->end
 
         int numberOfKeys;
         desc >> numberOfKeys;
@@ -548,7 +576,10 @@ void Parser::parseHashKeys(stringstream& desc) const {
                 .push_back(make_pair(var, key));
         }
 
-        desc >> numberOfKeys;
+	//Alex : removing Kleene things
+	//->start
+	/*
+	desc >> numberOfKeys;
         for (size_t j = 0; j < numberOfKeys; ++j) {
             int var;
             long key;
@@ -556,6 +587,7 @@ void Parser::parseHashKeys(stringstream& desc) const {
             KleeneState::indexToStateFluentHashKeyMap[index].push_back(
                 make_pair(var, key));
         }
+	*///Alex->end
     }
 
     for (size_t i = 0; i < State::numberOfProbabilisticStateFluents; ++i) {
@@ -575,10 +607,14 @@ void Parser::parseHashKeys(stringstream& desc) const {
             }
         }
 
+	//Alex : removing Kleene things
+	//->start
+	/*
         if (KleeneState::stateHashingPossible) {
             desc >> KleeneState::hashKeyBases
                         [index + State::numberOfDeterministicStateFluents];
         }
+	*///Alex->end
 
         int numberOfKeys;
         desc >> numberOfKeys;
@@ -590,6 +626,9 @@ void Parser::parseHashKeys(stringstream& desc) const {
                 .push_back(make_pair(var, key));
         }
 
+	//Alex : removing Kleene things
+	//->start
+	/*
         desc >> numberOfKeys;
         for (size_t j = 0; j < numberOfKeys; ++j) {
             int var;
@@ -599,6 +638,7 @@ void Parser::parseHashKeys(stringstream& desc) const {
                 [index + State::numberOfDeterministicStateFluents]
                     .push_back(make_pair(var, key));
         }
+	*///Alex->end
     }
 }
 
@@ -647,5 +687,5 @@ void Parser::resetStatics() const {
     //SearchEngine::trainingSet.clear();
     State::stateFluentHashKeysOfDeterministicStateFluents.clear();
     State::stateFluentHashKeysOfProbabilisticStateFluents.clear();
-    KleeneState::indexToStateFluentHashKeyMap.clear();
+    //KleeneState::indexToStateFluentHashKeyMap.clear(); //Alex : removing Kleene things
 }

@@ -85,6 +85,9 @@ void PDState::printPDStateCompact(ostream& out) const {
     }
 }
 
+//Alex : removing Kleene things
+//->start
+/*
 void KleeneState::print(ostream& out) const {
     for (unsigned int index = 0; index < KleeneState::stateSize; ++index) {
         out << SearchEngine::allCPFs[index]->name << ": { ";
@@ -95,6 +98,7 @@ void KleeneState::print(ostream& out) const {
         cout << "}" << endl;
     }
 }
+*///Alex->end
 
 void ActionState::printCompact(ostream& out) const {
     if (scheduledActionFluents.empty()) {

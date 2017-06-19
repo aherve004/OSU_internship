@@ -34,11 +34,15 @@ vector<vector<pair<int, long>>>
 vector<vector<pair<int, long>>>
     State::stateFluentHashKeysOfProbabilisticStateFluents;
 
+//Alex : removing Kleene things
+//->start
+/*
 int KleeneState::stateSize = 0;
 int KleeneState::numberOfStateFluentHashKeys = 0;
 bool KleeneState::stateHashingPossible = true;
 vector<long> KleeneState::hashKeyBases;
 vector<vector<pair<int, long>>> KleeneState::indexToStateFluentHashKeyMap;
+*///Alex->end
 
 string SearchEngine::taskName;
 //Murugeswari
@@ -738,10 +742,14 @@ void SearchEngine::printDeterministicCPFInDetail(ostream& out,
         }
     }
 
+    //Alex : removing Kleene things
+    //->start
+    /*
     if (KleeneState::stateHashingPossible) {
         out << "  KleeneHashKeyBase: " << KleeneState::hashKeyBases[index]
             << endl;
     }
+    *///Alex->end
 }
 
 void SearchEngine::printProbabilisticCPFInDetail(ostream& out,
@@ -775,12 +783,16 @@ void SearchEngine::printProbabilisticCPFInDetail(ostream& out,
         }
     }
 
+    //Alex : removing Kleene things
+    //->start
+    /*
     if (KleeneState::stateHashingPossible) {
         out << "  KleeneHashKeyBase: "
             << KleeneState::hashKeyBases
                    [index + State::numberOfDeterministicStateFluents]
             << endl;
     }
+    *///Alex->end
 }
 
 void SearchEngine::printRewardCPFInDetail(ostream& out) {
@@ -825,6 +837,9 @@ void SearchEngine::printEvaluatableInDetail(ostream& out, Evaluatable* eval) {
         break;
     }
 
+    //Alex : removing Kleene things
+    //->start
+    /*
     switch (eval->kleeneCachingType) {
     case Evaluatable::NONE:
         out << " no Kleene caching.";
@@ -838,6 +853,7 @@ void SearchEngine::printEvaluatableInDetail(ostream& out, Evaluatable* eval) {
             << eval->kleeneEvaluationCacheVector.size() << ".";
         break;
     }
+    *///Alex->end
 
     out << endl << endl;
 

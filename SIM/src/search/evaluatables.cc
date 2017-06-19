@@ -15,7 +15,12 @@ void Evaluatable::disableCaching() {
         cachingType = DISABLED_MAP;
     }
 
+    //Alex : removing Kleene things
+    //->start
+    /*
     if (kleeneCachingType == MAP) {
         kleeneCachingType = DISABLED_MAP;
     }
+    */
+    //Alex->end
 }

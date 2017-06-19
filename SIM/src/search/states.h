@@ -17,7 +17,7 @@ class DeterministicEvaluatable;
 
 class State {
 public:
-    friend class KleeneState;
+  //friend class KleeneState; //Alex : removing Kleene things
     friend class PDState;
 
     State(int const& _remSteps = -1)
@@ -501,6 +501,9 @@ protected:
 /*****************************************************************
   KleeneState
  *****************************************************************/
+//Alex : removing Kleene things
+//->start
+/*
 
 class KleeneState {
 public:
@@ -645,5 +648,6 @@ private:
           stateFluentHashKeys(other.stateFluentHashKeys),
           hashKey(other.hashKey) {}
 };
+*///Alex->end
 
 #endif

@@ -14,10 +14,13 @@ public:
         VECTOR // only few variables influence formula, so we use a vector for
                // caching
     };
-
+   
+    //Alex : removing Kleene things
+    //->start 
     // This function is called for state transitions with KleeneStates. The
     // result of the evaluation is a set of values, i.e., a subset of the domain
     // of this Evaluatable
+    /*
     void evaluateToKleene(std::set<double>& res, KleeneState const& current,
                           ActionState const& actions) {
         assert(res.empty());
@@ -72,6 +75,8 @@ public:
             break;
         }
     }
+    */
+    //Alex ->end
 
     // Properties
     virtual bool isProbabilistic() const = 0;
@@ -99,11 +104,14 @@ public:
     // ProbabilisticEvaluatable).
     CachingType cachingType;
 
+    //Alex : removing Kleene things
+    //->start
     // KleeneCachingType describes which of the two (if any) datastructures is
     // used to cache computed values on Kleene states
     CachingType kleeneCachingType;
     std::unordered_map<long, std::set<double>> kleeneEvaluationCacheMap;
     std::vector<std::set<double>> kleeneEvaluationCacheVector;
+    //Alex->end
 
     // ActionHashKeyMap contains the hash keys of the actions that influence
     // this Evaluatable (these are added to the state fluent hash keys of a
@@ -121,14 +129,14 @@ protected:
           formula(nullptr),
           hashIndex(_hashIndex),
           cachingType(NONE),
-          kleeneCachingType(NONE) {}
+      //kleeneCachingType(NONE) {} //Alex : removing Kleene things
 
     Evaluatable(std::string _name, LogicalExpression* _formula, int _hashIndex)
         : name(_name),
           formula(_formula),
           hashIndex(_hashIndex),
           cachingType(NONE),
-          kleeneCachingType(NONE) {}
+      //kleeneCachingType(NONE) {} //Alex : removing Kleene things
 };
 
 class DeterministicEvaluatable : public Evaluatable {
