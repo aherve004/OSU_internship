@@ -53,12 +53,13 @@ double step(double s[], int n, int a) {
 	vector<double> v(s, s+n);
 	PDState current = State(v, SearchEngine::horizon);
 
+	printf("actionFluents.size : %ld\n",(SearchEngine::actionFluents).size());
 	int actionIndex = 0;
 	if (a > 0) {
 		actionIndex = (SearchEngine::actionFluents).size() - a + 1;
-
+		
 		//Test
-		//cout << "a: " << a << " actionIndex: " << actionIndex << endl;
+		cout << "a: " << a << " actionIndex: " << actionIndex << endl;
 		//(libSearchEngine->actionStates[actionIndex]).printCompact(cout);
 		//cout << endl;
 	}
@@ -123,19 +124,23 @@ double next(int a) {
 
 
 int main(int argc, char** argv) {
-	double s[] = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+  /*double s[] = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
 			1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
 			1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
-	int n = end(s) - begin(s);
-	parse(argv[1]);
-	for (int i=0; i<n+1; i++) {
-		cout << step(s, n, i) << endl;
-	}
+  */
+  double s[] = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
+  int n = end(s) - begin(s);
+  parse(argv[1]);
+  printf("parser ended\n");
+  for (int i=0; i<n+1; i++) {
+    printf("step %d\n", i);
+    cout << step(s, n, i) << endl;
+  }
 
-	setInternalState(s, n);
-	for (int i=0; i<n+1; i++) {
-		cout << next(i) << endl;
-	}
-
-	return 0;
+  setInternalState(s, n);
+  for (int i=0; i<n+1; i++) {
+    cout << next(i) << endl;
+  }
+  
+  return 0;
 }

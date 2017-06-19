@@ -175,8 +175,6 @@ switch( ($a(1) : $c(1)) ($s(1) : Bernoulli(+(/(*(+($s(8) $c(1)) $c(0.5)) $c(2)) 
 1
 ## caching type 
 NONE
-## kleene caching type
-NONE
 ## action hash keys
 0 0
 1 0
@@ -204,8 +202,6 @@ switch( ($a(2) : $c(1)) ($s(2) : Bernoulli(+(/(*(+($s(1) $c(1)) $c(0.5)) $c(2)) 
 ## hash index
 2
 ## caching type 
-NONE
-## kleene caching type
 NONE
 ## action hash keys
 0 0
@@ -235,8 +231,6 @@ switch( ($a(3) : $c(1)) ($s(3) : Bernoulli($c(0.95))) ($c(1) : Bernoulli($c(0.05
 3
 ## caching type 
 NONE
-## kleene caching type
-NONE
 ## action hash keys
 0 0
 1 0
@@ -264,8 +258,6 @@ switch( ($a(4) : $c(1)) ($s(4) : Bernoulli(+(/(*(+($s(0) $s(3) $s(6) $c(1)) $c(0
 ## hash index
 4
 ## caching type 
-NONE
-## kleene caching type
 NONE
 ## action hash keys
 0 0
@@ -295,8 +287,6 @@ switch( ($a(5) : $c(1)) ($s(5) : Bernoulli(+(/(*(+($s(4) $c(1)) $c(0.5)) $c(2)) 
 5
 ## caching type 
 NONE
-## kleene caching type
-NONE
 ## action hash keys
 0 0
 1 0
@@ -324,8 +314,6 @@ switch( ($a(6) : $c(1)) ($s(6) : Bernoulli(+(/(*(+($s(8) $s(9) $c(1)) $c(0.5)) $
 ## hash index
 6
 ## caching type 
-NONE
-## kleene caching type
 NONE
 ## action hash keys
 0 0
@@ -355,8 +343,6 @@ switch( ($a(7) : $c(1)) ($s(7) : Bernoulli(+(/(*(+($s(5) $c(1)) $c(0.5)) $c(2)) 
 7
 ## caching type 
 NONE
-## kleene caching type
-NONE
 ## action hash keys
 0 0
 1 0
@@ -384,8 +370,6 @@ switch( ($a(8) : $c(1)) ($s(8) : Bernoulli(+(/(*(+($s(2) $s(6) $c(1)) $c(0.5)) $
 ## hash index
 8
 ## caching type 
-NONE
-## kleene caching type
 NONE
 ## action hash keys
 0 0
@@ -415,8 +399,6 @@ switch( ($a(9) : $c(1)) ($s(9) : Bernoulli(+(/(*(+($s(0) $s(3) $s(7) $c(1)) $c(0
 9
 ## caching type 
 NONE
-## kleene caching type
-NONE
 ## action hash keys
 0 0
 1 1
@@ -444,8 +426,6 @@ NONE
 ## hash index
 10
 ## caching type
-NONE
-## kleene caching type
 NONE
 ## action hash keys
 0 0

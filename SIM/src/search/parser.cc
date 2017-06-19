@@ -550,6 +550,7 @@ void Parser::parseActionState(stringstream& desc) const {
     vector<int> values(SearchEngine::actionFluents.size());
     vector<ActionFluent*> scheduledActionFluents;
 
+    printf("loop 1\n");
     for (size_t j = 0; j < SearchEngine::actionFluents.size(); ++j) {
         desc >> values[j];
         if (values[j] == 1) {
@@ -561,7 +562,8 @@ void Parser::parseActionState(stringstream& desc) const {
     desc >> numberOfRelevantPreconditions;
     vector<DeterministicEvaluatable*> relevantPreconditions(
         numberOfRelevantPreconditions);
-
+    
+    printf("loop 2, number of relevant preconditions = %d\n", numberOfRelevantPreconditions);
     for (size_t j = 0; j < numberOfRelevantPreconditions; ++j) {
         int precondIndex;
         desc >> precondIndex;
