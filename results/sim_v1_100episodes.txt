@@ -1,0 +1,720 @@
+Parsing...
+...finished (0.004076s).
+Writing output...
+...finished (0.106719s).  game_of_life_inst_mdp__1
+done ... total time: 2.13011s
+parsed
+Parsing ... ./rddl/parsed/game_of_life_inst_mdp__1
+Done
+Parsing...
+...finished (0.002599s).
+Writing output...
+...finished (0.069109s).  game_of_life_inst_mdp__2
+done ... total time: 2.08308s
+
+
+#########################################################################
+##problem : game_of_life_inst_mdp__1##
+time average : 0.03015625 for a run over 100 episodes
+reward average : 1594.55
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/game_of_life_inst_mdp__2
+Done
+Parsing...
+...finished (0.00170708s).
+Writing output...
+...finished (0.111618s).  game_of_life_inst_mdp__3
+done ... total time: 2.12562s
+
+
+#########################################################################
+##problem : game_of_life_inst_mdp__2##
+time average : 0.0146875 for a run over 100 episodes
+reward average : 1200.33
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/game_of_life_inst_mdp__3
+Done
+Parsing...
+...finished (0.00422978s).
+Writing output...
+...finished (0.172559s).  game_of_life_inst_mdp__4
+done ... total time: 2.20972s
+
+
+#########################################################################
+##problem : game_of_life_inst_mdp__3##
+time average : 0.02234375 for a run over 100 episodes
+reward average : 2019.72
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/game_of_life_inst_mdp__4
+Done
+Parsing...
+...finished (0.00388503s).
+Writing output...
+...finished (0.178688s).  game_of_life_inst_mdp__5
+done ... total time: 2.21836s
+
+
+#########################################################################
+##problem : game_of_life_inst_mdp__4##
+time average : 0.02515625 for a run over 100 episodes
+reward average : 3556.15
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/game_of_life_inst_mdp__5
+Done
+Parsing...
+...finished (0.00665712s).
+Writing output...
+...finished (0.186071s).  game_of_life_inst_mdp__6
+done ... total time: 2.24331s
+
+
+#########################################################################
+##problem : game_of_life_inst_mdp__5##
+time average : 0.03015625 for a run over 100 episodes
+reward average : 4306.65
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/game_of_life_inst_mdp__6
+Done
+Parsing...
+...finished (0.00531602s).
+Writing output...
+...finished (0.329811s).  game_of_life_inst_mdp__7
+done ... total time: 2.40449s
+
+
+#########################################################################
+##problem : game_of_life_inst_mdp__6##
+time average : 0.02453125 for a run over 100 episodes
+reward average : 4802.69
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/game_of_life_inst_mdp__7
+Done
+Parsing...
+...finished (0.00557494s).
+Writing output...
+...finished (0.310101s).  game_of_life_inst_mdp__8
+done ... total time: 2.38392s
+
+
+#########################################################################
+##problem : game_of_life_inst_mdp__7##
+time average : 0.03046875 for a run over 100 episodes
+reward average : 6230.58
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/game_of_life_inst_mdp__8
+Done
+Parsing...
+...finished (0.00528693s).
+Writing output...
+...finished (0.408324s).  game_of_life_inst_mdp__9
+done ... total time: 2.49273s
+
+
+#########################################################################
+##problem : game_of_life_inst_mdp__8##
+time average : 0.03203125 for a run over 100 episodes
+reward average : 6460.76
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/game_of_life_inst_mdp__9
+Done
+Parsing...
+...finished (0.00835991s).
+Writing output...
+...finished (0.389306s).  game_of_life_inst_mdp__10
+done ... total time: 2.49369s
+
+
+#########################################################################
+##problem : game_of_life_inst_mdp__9##
+time average : 0.0309375 for a run over 100 episodes
+reward average : 6751.41
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/game_of_life_inst_mdp__10
+Done
+Parsing...
+...finished (0.00242901s).
+Writing output...
+...finished (0.0899088s).  navigation_inst_mdp__1
+done ... total time: 2.10534s
+
+
+#########################################################################
+##problem : game_of_life_inst_mdp__10##
+time average : 0.031875 for a run over 100 episodes
+reward average : 5102.12
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/navigation_inst_mdp__1
+Done
+Parsing...
+...finished (0.00285792s).
+Writing output...
+...finished (0.0979199s).  navigation_inst_mdp__2
+done ... total time: 2.1201s
+
+
+#########################################################################
+##problem : navigation_inst_mdp__1##
+time average : 0.019375 for a run over 100 episodes
+reward average : -815.04
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/navigation_inst_mdp__2
+Done
+Parsing...
+...finished (0.00263309s).
+Writing output...
+...finished (0.131074s).  navigation_inst_mdp__3
+done ... total time: 2.15788s
+
+
+#########################################################################
+##problem : navigation_inst_mdp__2##
+time average : 0.02015625 for a run over 100 episodes
+reward average : -814.72
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/navigation_inst_mdp__3
+Done
+Parsing...
+...finished (0.00294209s).
+Writing output...
+...finished (0.182585s).  navigation_inst_mdp__4
+done ... total time: 2.22334s
+
+
+#########################################################################
+##problem : navigation_inst_mdp__3##
+time average : 0.02265625 for a run over 100 episodes
+reward average : -820.0
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/navigation_inst_mdp__4
+Done
+Parsing...
+...finished (0.00281286s).
+Writing output...
+...finished (0.18483s).  navigation_inst_mdp__5
+done ... total time: 2.23013s
+
+
+#########################################################################
+##problem : navigation_inst_mdp__4##
+time average : 0.026875 for a run over 100 episodes
+reward average : -820.0
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/navigation_inst_mdp__5
+Done
+Parsing...
+...finished (0.003685s).
+Writing output...
+...finished (0.242451s).  navigation_inst_mdp__6
+done ... total time: 2.30658s
+
+
+#########################################################################
+##problem : navigation_inst_mdp__5##
+time average : 0.024375 for a run over 100 episodes
+reward average : -806.68
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/navigation_inst_mdp__6
+Done
+Parsing...
+...finished (0.00384498s).
+Writing output...
+...finished (0.287462s).  navigation_inst_mdp__7
+done ... total time: 2.37173s
+
+
+#########################################################################
+##problem : navigation_inst_mdp__6##
+time average : 0.02828125 for a run over 100 episodes
+reward average : -820.0
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/navigation_inst_mdp__7
+Done
+Parsing...
+...finished (0.00367904s).
+Writing output...
+...finished (0.332516s).  navigation_inst_mdp__8
+done ... total time: 2.46377s
+
+
+#########################################################################
+##problem : navigation_inst_mdp__7##
+time average : 0.033125 for a run over 100 episodes
+reward average : -820.0
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/navigation_inst_mdp__8
+Done
+Parsing...
+...finished (0.00554609s).
+Writing output...
+...finished (0.504573s).  navigation_inst_mdp__9
+done ... total time: 2.70088s
+
+
+#########################################################################
+##problem : navigation_inst_mdp__8##
+time average : 0.02890625 for a run over 100 episodes
+reward average : -812.97
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/navigation_inst_mdp__9
+Done
+Parsing...
+...finished (0.00467491s).
+Writing output...
+...finished (0.70054s).  navigation_inst_mdp__10
+done ... total time: 2.97369s
+
+
+#########################################################################
+##problem : navigation_inst_mdp__9##
+time average : 0.03875 for a run over 100 episodes
+reward average : -820.0
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/navigation_inst_mdp__10
+Done
+Parsing...
+...finished (0.00211906s).
+Writing output...
+...finished (0.102844s).  sysadmin_inst_mdp__1
+done ... total time: 2.11738s
+
+
+#########################################################################
+##problem : navigation_inst_mdp__10##
+time average : 0.04953125 for a run over 100 episodes
+reward average : -820.0
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/sysadmin_inst_mdp__1
+Done
+Parsing...
+...finished (0.0020082s).
+Writing output...
+...finished (0.105159s).  sysadmin_inst_mdp__2
+done ... total time: 2.11975s
+
+
+#########################################################################
+##problem : sysadmin_inst_mdp__1##
+time average : 0.01921875 for a run over 100 episodes
+reward average : 4920.7475
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/sysadmin_inst_mdp__2
+Done
+Parsing...
+...finished (0.00233412s).
+Writing output...
+...finished (0.29465s).  sysadmin_inst_mdp__3
+done ... total time: 2.32236s
+
+
+#########################################################################
+##problem : sysadmin_inst_mdp__2##
+time average : 0.02109375 for a run over 100 episodes
+reward average : 4173.7425
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/sysadmin_inst_mdp__3
+Done
+Parsing...
+...finished (0.00308514s).
+Writing output...
+...finished (0.21926s).  sysadmin_inst_mdp__4
+done ... total time: 2.24846s
+
+
+#########################################################################
+##problem : sysadmin_inst_mdp__3##
+time average : 0.02125 for a run over 100 episodes
+reward average : 8656.7675
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/sysadmin_inst_mdp__4
+Done
+Parsing...
+...finished (0.00303292s).
+Writing output...
+...finished (0.366741s).  sysadmin_inst_mdp__5
+done ... total time: 2.40945s
+
+
+#########################################################################
+##problem : sysadmin_inst_mdp__4##
+time average : 0.02359375 for a run over 100 episodes
+reward average : 8082.665
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/sysadmin_inst_mdp__5
+Done
+Parsing...
+...finished (0.00310802s).
+Writing output...
+...finished (0.467271s).  sysadmin_inst_mdp__6
+done ... total time: 2.52639s
+
+
+#########################################################################
+##problem : sysadmin_inst_mdp__5##
+time average : 0.030625 for a run over 100 episodes
+reward average : 11785.4425
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/sysadmin_inst_mdp__6
+Done
+Parsing...
+...finished (0.00352192s).
+Writing output...
+...finished (0.659583s).  sysadmin_inst_mdp__7
+done ... total time: 2.7298s
+
+
+#########################################################################
+##problem : sysadmin_inst_mdp__6##
+time average : 0.03015625 for a run over 100 episodes
+reward average : 10702.21
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/sysadmin_inst_mdp__7
+Done
+Parsing...
+...finished (0.00386715s).
+Writing output...
+...finished (0.607647s).  sysadmin_inst_mdp__8
+done ... total time: 2.68911s
+
+
+#########################################################################
+##problem : sysadmin_inst_mdp__7##
+time average : 0.02921875 for a run over 100 episodes
+reward average : 14451.8725
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/sysadmin_inst_mdp__8
+Done
+Parsing...
+...finished (0.00381303s).
+Writing output...
+...finished (0.741087s).  sysadmin_inst_mdp__9
+done ... total time: 2.85314s
+
+
+#########################################################################
+##problem : sysadmin_inst_mdp__8##
+time average : 0.02875 for a run over 100 episodes
+reward average : 12648.235
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/sysadmin_inst_mdp__9
+Done
+Parsing...
+...finished (0.00578713s).
+Writing output...
+...finished (0.972765s).  sysadmin_inst_mdp__10
+done ... total time: 3.09326s
+
+
+#########################################################################
+##problem : sysadmin_inst_mdp__9##
+time average : 0.04265625 for a run over 100 episodes
+reward average : 17681.14
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/sysadmin_inst_mdp__10
+Done
+Parsing...
+...finished (0.00373697s).
+Writing output...
+...finished (0.170053s).  tamarisk_inst_mdp__1
+done ... total time: 2.28711s
+
+
+#########################################################################
+##problem : sysadmin_inst_mdp__10##
+time average : 0.03953125 for a run over 100 episodes
+reward average : 15126.4525
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/tamarisk_inst_mdp__1
+Done
+Parsing...
+...finished (0.00579309s).
+Writing output...
+...finished (0.228305s).  tamarisk_inst_mdp__2
+done ... total time: 2.42399s
+
+
+#########################################################################
+##problem : tamarisk_inst_mdp__1##
+time average : 0.03390625 for a run over 100 episodes
+reward average : -12741.5755
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/tamarisk_inst_mdp__2
+Done
+Parsing...
+...finished (0.00411201s).
+Writing output...
+...finished (0.158209s).  tamarisk_inst_mdp__3
+done ... total time: 2.28646s
+
+
+#########################################################################
+##problem : tamarisk_inst_mdp__2##
+time average : 0.03625 for a run over 100 episodes
+reward average : -19328.5121
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/tamarisk_inst_mdp__3
+Done
+Parsing...
+...finished (0.00356412s).
+Writing output...
+...finished (0.22074s).  tamarisk_inst_mdp__4
+done ... total time: 2.56565s
+
+
+#########################################################################
+##problem : tamarisk_inst_mdp__3##
+time average : 0.02640625 for a run over 100 episodes
+reward average : -15932.3937
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/tamarisk_inst_mdp__4
+Done
+Parsing...
+...finished (0.00336289s).
+Writing output...
+...finished (0.20254s).  tamarisk_inst_mdp__5
+done ... total time: 2.47841s
+
+
+#########################################################################
+##problem : tamarisk_inst_mdp__4##
+time average : 0.0315625 for a run over 100 episodes
+reward average : -24252.6942
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/tamarisk_inst_mdp__5
+Done
+Parsing...
+...finished (0.00538301s).
+Writing output...
+...finished (0.32583s).  tamarisk_inst_mdp__6
+done ... total time: 2.86431s
+
+
+#########################################################################
+##problem : tamarisk_inst_mdp__5##
+time average : 0.02875 for a run over 100 episodes
+reward average : -25883.9292
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/tamarisk_inst_mdp__6
+Done
+Parsing...
+...finished (0.00496197s).
+Writing output...
+...finished (0.246894s).  tamarisk_inst_mdp__7
+done ... total time: 2.69099s
+
+
+#########################################################################
+##problem : tamarisk_inst_mdp__6##
+time average : 0.0346875 for a run over 100 episodes
+reward average : -29144.8416
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/tamarisk_inst_mdp__7
+Done
+Parsing...
+...finished (0.00400591s).
+Writing output...
+...finished (0.346103s).  tamarisk_inst_mdp__8
+done ... total time: 3.29353s
+
+
+#########################################################################
+##problem : tamarisk_inst_mdp__7##
+time average : 0.02984375 for a run over 100 episodes
+reward average : -29069.7752
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/tamarisk_inst_mdp__8
+Done
+Parsing...
+...finished (0.00355721s).
+Writing output...
+...finished (0.288476s).  tamarisk_inst_mdp__9
+done ... total time: 2.98107s
+
+
+#########################################################################
+##problem : tamarisk_inst_mdp__8##
+time average : 0.0365625 for a run over 100 episodes
+reward average : -33207.181
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/tamarisk_inst_mdp__9
+Done
+Parsing...
+...finished (0.00416613s).
+Writing output...
+...finished (0.425256s).  tamarisk_inst_mdp__10
+done ... total time: 4.22511s
+
+
+#########################################################################
+##problem : tamarisk_inst_mdp__9##
+time average : 0.031875 for a run over 100 episodes
+reward average : -28820.7068
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/tamarisk_inst_mdp__10
+Done
+
+
+#########################################################################
+##problem : tamarisk_inst_mdp__10##
+time average : 0.0390625 for a run over 100 episodes
+reward average : -33990.0097
+Environment Closed
+#########################################################################
+
+
