@@ -96,7 +96,7 @@ void TaskAnalyzer::analyzeStateAndApplyAction(State const& current, State& next,
 
     // Check if this is a rewward lock
     if (task->rewardFormulaAllowsRewardLockDetection &&
-        !task->rewardLockDetected && isARewardLock(current, reward)) {
+        !task->rewardLockDetected){ //&& isARewardLock(current, reward)) {//Alex : removing Kleene things
         task->rewardLockDetected = true;
     }
 }
