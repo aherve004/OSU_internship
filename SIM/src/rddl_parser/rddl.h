@@ -128,11 +128,10 @@ public:
 
     // Hash Keys
     std::vector<std::vector<long>> stateHashKeys;
-    std::vector<long> kleeneStateHashKeyBases;
+    //std::vector<long> kleeneStateHashKeyBases; //Alex : removing kleene things
 
     std::vector<std::vector<std::pair<int, long>>> indexToStateFluentHashKeyMap;
-    std::vector<std::vector<std::pair<int, long>>>
-        indexToKleeneStateFluentHashKeyMap;
+    //std::vector<std::vector<std::pair<int, long>>> indexToKleeneStateFluentHashKeyMap; //Alex : removing kleene things
 
     // Random training set of reachable states
     std::set<State, State::StateSort> trainingSet;

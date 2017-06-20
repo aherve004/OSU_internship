@@ -1,36 +1,39 @@
-void LogicalExpression::evaluateToKleene(set<double>& /*res*/,
-                                         KleeneState const& /*current*/,
-                                         ActionState const& /*actions*/) const {
+//Alex : removing kleene things
+/*
+
+  void LogicalExpression::evaluateToKleene(set<double>& /*res*//*,
+								 KleeneState const& /*current*//*,
+												 ActionState const& /*actions*//*) const {
     assert(false);
 }
 
 /*****************************************************************
                            Atomics
-*****************************************************************/
+*****************************************************************//*
 
 void StateFluent::evaluateToKleene(set<double>& res, KleeneState const& current,
-                                   ActionState const& /*actions*/) const {
+ActionState const& /*actions*//*) const {
     assert(res.empty());
     res.insert(current[index].begin(), current[index].end());
 }
 
 void ActionFluent::evaluateToKleene(set<double>& res,
-                                    KleeneState const& /*current*/,
+KleeneState const& /*current*//*,
                                     ActionState const& actions) const {
     assert(res.empty());
     res.insert(actions[index]);
 }
 
 void NumericConstant::evaluateToKleene(set<double>& res,
-                                       KleeneState const& /*current*/,
-                                       ActionState const& /*actions*/) const {
+KleeneState const& /*current*//*,
+                                       ActionState const& /*actions*//*) const {
     assert(res.empty());
     res.insert(value);
 }
 
 /*****************************************************************
                            Connectives
-*****************************************************************/
+*****************************************************************//*
 
 void Conjunction::evaluateToKleene(set<double>& res, KleeneState const& current,
                                    ActionState const& actions) const {
@@ -283,7 +286,7 @@ void Division::evaluateToKleene(set<double>& res, KleeneState const& current,
 
 /*****************************************************************
                           Unaries
-*****************************************************************/
+*****************************************************************//*
 
 void Negation::evaluateToKleene(set<double>& res, KleeneState const& current,
                                 ActionState const& actions) const {
@@ -325,7 +328,7 @@ void ExponentialFunction::evaluateToKleene(set<double>& res,
 
 /*****************************************************************
                    Probability Distributions
-*****************************************************************/
+*****************************************************************//*
 
 void BernoulliDistribution::evaluateToKleene(set<double>& res,
                                              KleeneState const& current,
@@ -371,7 +374,7 @@ void DiscreteDistribution::evaluateToKleene(set<double>& res,
 
 /*****************************************************************
                          Conditionals
-*****************************************************************/
+*****************************************************************//*
 
 void IfThenElseExpression::evaluateToKleene(set<double>& res,
                                             KleeneState const& current,
@@ -425,3 +428,4 @@ void MultiConditionChecker::evaluateToKleene(set<double>& res,
     }
     assert(false);
 }
+*///Alex : end

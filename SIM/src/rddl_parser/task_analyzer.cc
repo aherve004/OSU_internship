@@ -146,6 +146,9 @@ inline bool TaskAnalyzer::actionIsApplicable(ActionState const& action,
     return true;
 }
 
+
+//Alex : removing kleene things
+/*
 inline bool TaskAnalyzer::isARewardLock(State const& current,
                                         double const& reward) const {
     if (MathUtils::doubleIsEqual(task->rewardCPF->getMinVal(), reward)) {
@@ -238,6 +241,8 @@ bool TaskAnalyzer::checkGoal(KleeneState const& state) const {
     }
     return false;
 }
+*///Alex : end
+
 
 void TaskAnalyzer::createTrainingSet(int const& numberOfStates) {
     //Murugeswari

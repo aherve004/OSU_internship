@@ -71,7 +71,7 @@ void Preprocessor::preprocess(bool const& output) {
     if (output)
         cout << "    Preparing hash keys..." << endl;
     prepareStateHashKeys();
-    prepareKleeneStateHashKeys();
+    //prepareKleeneStateHashKeys();//Alex : removing kleene things
     prepareStateFluentHashKeys();
     if (output)
         cout << "    ...finished (" << t() << ")" << endl;
@@ -843,6 +843,8 @@ void Preprocessor::prepareStateHashKeys() {
 }
 
 // Check if hashing of KleeneStates is possible, and assign hash key bases if so
+//Alex : removing kleene things
+/*
 void Preprocessor::prepareKleeneStateHashKeys() {
     bool kleeneStateHashingPossible = true;
 
@@ -885,10 +887,11 @@ void Preprocessor::prepareKleeneStateHashKeys() {
         task->kleeneStateHashKeyBases.clear();
     }
 }
+*///Alex : end
 
 void Preprocessor::prepareStateFluentHashKeys() {
     task->indexToStateFluentHashKeyMap.resize(task->CPFs.size());
-    task->indexToKleeneStateFluentHashKeyMap.resize(task->CPFs.size());
+    //task->indexToKleeneStateFluentHashKeyMap.resize(task->CPFs.size()); //Alex : removing kleene things
 
     int hashIndex = 0;
 

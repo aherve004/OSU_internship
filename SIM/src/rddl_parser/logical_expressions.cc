@@ -108,7 +108,7 @@ bool Type::isSubtypeOf(Type* const& other) const {
 #include "logical_expressions_includes/collect_initial_info.cc"
 #include "logical_expressions_includes/determinization.cc"
 #include "logical_expressions_includes/evaluate.cc"
-#include "logical_expressions_includes/evaluate_to_kleene.cc"
+//#include "logical_expressions_includes/evaluate_to_kleene.cc" //Alex : removing kleene things
 #include "logical_expressions_includes/evaluate_to_pd.cc"
 #include "logical_expressions_includes/instantiate.cc"
 #include "logical_expressions_includes/print.cc"

@@ -74,7 +74,7 @@ void Evaluatable::initializeHashKeys(RDDLTask* task) {
 
     long baseKey = initializeActionHashKeys(task->actionStates);
     initializeStateFluentHashKeys(task, baseKey);
-    initializeKleeneStateFluentHashKeys(task, baseKey);
+    //initializeKleeneStateFluentHashKeys(task, baseKey); //Alex : removing kleene things
 }
 
 long Evaluatable::initializeActionHashKeys(
@@ -197,6 +197,8 @@ void Evaluatable::initializeStateFluentHashKeys(RDDLTask* task,
 		cachingType = "NONE";
 }
 
+//Alex : removing kleene things
+/*
 void Evaluatable::initializeKleeneStateFluentHashKeys(RDDLTask* task,
                                                       long const& baseKey) {
     long nextHashKeyBase = baseKey;
@@ -246,3 +248,4 @@ void Evaluatable::initializeKleeneStateFluentHashKeys(RDDLTask* task,
 		//Murugeswari
 		kleeneCachingType = "NONE";
 }
+*///Alex : end

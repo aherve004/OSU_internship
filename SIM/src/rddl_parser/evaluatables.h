@@ -53,10 +53,13 @@ struct Evaluatable {
     std::vector<double> precomputedResults;
     std::vector<DiscretePD> precomputedPDResults;
 
+  //Alex : removing kleene things
+  /*
     // The kleene caching type that will be used (initially) for this
     // evaluatable and the size of the vector if kleeneCachingType is VECTOR
     std::string kleeneCachingType;
     int kleeneCachingVectorSize;
+  *///Alex : end
 
     // Properties of this Evaluatable
     std::set<StateFluent*> dependentStateFluents;
@@ -85,8 +88,7 @@ struct Evaluatable {
                           std::vector<ActionFluent*>& scheduledActions);
 
     void initializeStateFluentHashKeys(RDDLTask* task, long const& baseKey);
-    void initializeKleeneStateFluentHashKeys(RDDLTask* task,
-                                             long const& baseKey);
+  //void initializeKleeneStateFluentHashKeys(RDDLTask* task, long const& baseKey); //Alex :removing kleene things
 };
 
 struct ActionPrecondition : public Evaluatable {
@@ -147,8 +149,8 @@ struct ConditionalProbabilityFunction : public Evaluatable {
     ConditionalProbabilityFunction(StateFluent* _head,
                                    LogicalExpression* _formula)
         : Evaluatable(_head->fullName, _formula),
-          head(_head),
-          kleeneDomainSize(0) {}
+      head(_head){}
+      //kleeneDomainSize(0) {} //Alex : removing kleene things
 
     int getDomainSize() const {
         return domain.size();
@@ -172,7 +174,7 @@ struct ConditionalProbabilityFunction : public Evaluatable {
     std::set<double> domain;
 
     // Hashing of KleeneStates
-    long kleeneDomainSize;
+    //long kleeneDomainSize; //Alex : removing kleene things
 };
 
 #endif

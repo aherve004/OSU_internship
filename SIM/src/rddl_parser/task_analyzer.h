@@ -28,9 +28,12 @@ protected:
 
     void detectUnreasonableActionsInDeterminization(State const& current) const;
 
+    //Alex : removing kleene things
+    /*
     bool isARewardLock(State const& current, double const& reward) const;
     bool checkDeadEnd(KleeneState const& state) const;
     bool checkGoal(KleeneState const& state) const;
+    *///Alex : end
 
     void createTrainingSet(int const& numberOfStates);
 };

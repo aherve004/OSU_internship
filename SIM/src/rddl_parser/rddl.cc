@@ -310,8 +310,11 @@ void RDDLTask::print(std::ostream& out) {
     out << "## 1 if state hashing possible" << std::endl;
     out << !stateHashKeys.empty() << std::endl;
 
+    //Alex : removing kleene things
+    /*
     out << "## 1 if kleene state hashing possible" << std::endl;
     out << !kleeneStateHashKeyBases.empty() << std::endl;
+    *///Alex : end
 
 		//Murugeswari
 		/*
@@ -411,6 +414,9 @@ void RDDLTask::print(std::ostream& out) {
                     << std::endl;
             }
         }
+
+	//Alex : removing kleene things
+	/*
         out << "## kleene caching type" << std::endl;
 
 				//Murugeswari
@@ -421,6 +427,7 @@ void RDDLTask::print(std::ostream& out) {
             out << "## kleene caching vec size" << std::endl;
             out << CPFs[index]->kleeneCachingVectorSize << std::endl;
         }
+	*///Alex : end
 
         out << "## action hash keys" << std::endl;
         for (unsigned int actionIndex = 0;
@@ -497,6 +504,9 @@ void RDDLTask::print(std::ostream& out) {
                 out << std::endl;
             }
         }
+
+	//Alex : removing kleene things
+	/*
         out << "## kleene caching type" << std::endl;
 
 				//Murugeswari
@@ -507,6 +517,7 @@ void RDDLTask::print(std::ostream& out) {
             out << "## kleene caching vec size" << std::endl;
             out << CPFs[index]->kleeneCachingVectorSize << std::endl;
         }
+	*///Alex : end
 
         out << "## action hash keys" << std::endl;
         for (unsigned int actionIndex = 0;
@@ -548,6 +559,9 @@ void RDDLTask::print(std::ostream& out) {
                 << std::endl;
         }
     }
+
+    //Alex : removing kleene things
+    /*
     out << "## kleene caching type" << std::endl;
 
 		//Murugeswari
@@ -558,6 +572,7 @@ void RDDLTask::print(std::ostream& out) {
         out << "## kleene caching vec size" << std::endl;
         out << rewardCPF->kleeneCachingVectorSize << std::endl;
     }
+    *///Alex : end
 
     out << "## action hash keys" << std::endl;
     for (unsigned int actionIndex = 0;
@@ -595,6 +610,9 @@ void RDDLTask::print(std::ostream& out) {
                     << std::endl;
             }
         }
+
+	//Alex : removing kleene things
+	/*
         out << "## kleene caching type" << std::endl;
 
 				//Murugeswari
@@ -605,6 +623,7 @@ void RDDLTask::print(std::ostream& out) {
             out << "## kleene caching vec size" << std::endl;
             out << actionPreconds[index]->kleeneCachingVectorSize << std::endl;
         }
+	*///Alex : end
 
         out << "## action hash keys" << std::endl;
         for (unsigned int actionIndex = 0;
@@ -658,12 +677,15 @@ void RDDLTask::print(std::ostream& out) {
         }
         out << std::endl;
 
+	//Alex : removing kleene things
+	/*
         if (!kleeneStateHashKeyBases.empty()) {
             out << "## kleene state hash key base" << std::endl;
 						//Murugeswari
             //out << kleeneStateHashKeyBases[index] << std::endl;
 						out << "0" << std::endl;
         }
+	*///Alex : end
 
         out << "## state fluent hash keys (first line is the number of keys)"
             << std::endl;
@@ -674,6 +696,8 @@ void RDDLTask::print(std::ostream& out) {
             out << indexToStateFluentHashKeyMap[index][i].second << std::endl;
         }
 
+	//Alex : removing kleene things
+	/*
         out << "## kleene state fluent hash keys (first line is the number of "
                "keys)"
             << std::endl;
@@ -686,6 +710,8 @@ void RDDLTask::print(std::ostream& out) {
             out << indexToKleeneStateFluentHashKeyMap[index][i].second
                 << std::endl;
         }
+	*///Alex : end
+
         out << std::endl;
     }
 
@@ -709,12 +735,15 @@ void RDDLTask::print(std::ostream& out) {
         }
         out << std::endl;
 
+	//Alex : removing kleene things
+	/*
         if (!kleeneStateHashKeyBases.empty()) {
             out << "## kleene state hash key base" << std::endl;
 						//Murugeswari
             //out << kleeneStateHashKeyBases[index] << std::endl;
 						out << "0" << std::endl;
         }
+	*///Alex : end
 
         out << "## state fluent hash keys (first line is the number of keys)"
             << std::endl;
@@ -725,6 +754,8 @@ void RDDLTask::print(std::ostream& out) {
             out << indexToStateFluentHashKeyMap[index][i].second << std::endl;
         }
 
+	//Alex : removing kleene things
+	/*
         out << "## kleene state fluent hash keys (first line is the number of "
                "keys)"
             << std::endl;
@@ -738,6 +769,8 @@ void RDDLTask::print(std::ostream& out) {
             out << indexToKleeneStateFluentHashKeyMap[index][i].second
                 << std::endl;
         }
+	*///Alex : end
+
         out << std::endl;
     }
 

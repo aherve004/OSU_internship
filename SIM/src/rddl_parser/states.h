@@ -89,7 +89,8 @@ struct PDState {
 /*****************************************************************
                           KleeneState
 *****************************************************************/
-
+//Alex : removing kleene things
+/*
 class KleeneState {
 public:
     KleeneState(int stateSize) : state(stateSize) {}
@@ -145,6 +146,7 @@ protected:
 private:
     KleeneState(KleeneState const& other) : state(other.state) {}
 };
+*///Alex : end
 
 /*****************************************************************
                             ActionState

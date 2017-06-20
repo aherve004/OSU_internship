@@ -47,7 +47,7 @@ private:
     void addDominantState(int stateIndex) const;
 
     void prepareStateHashKeys();
-    void prepareKleeneStateHashKeys();
+    //void prepareKleeneStateHashKeys(); //Alex : removing kleene things
     void prepareStateFluentHashKeys();
 
     void precomputeEvaluatables();
