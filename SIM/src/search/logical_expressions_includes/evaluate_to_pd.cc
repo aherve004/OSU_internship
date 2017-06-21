@@ -11,12 +11,14 @@ void LogicalExpression::evaluateToPD(DiscretePD& /*res*/,
 void DeterministicStateFluent::evaluateToPD(
     DiscretePD& res, State const& current,
     ActionState const& /*actions*/) const {
+    printf("coucou c est evaluatetopd de deterministicStateFluent\n");
     res.assignDiracDelta(current.deterministicStateFluent(index));
 }
 
 void ProbabilisticStateFluent::evaluateToPD(
     DiscretePD& res, State const& current,
     ActionState const& /*actions*/) const {
+    printf("coucou c est evaluatetopd de probabilisticStateFluent\n");
     res.assignDiracDelta(current.probabilisticStateFluent(index));
 }
 

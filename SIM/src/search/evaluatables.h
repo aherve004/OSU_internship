@@ -106,12 +106,13 @@ public:
 
     //Alex : removing Kleene things
     //->start
+    /*
     // KleeneCachingType describes which of the two (if any) datastructures is
     // used to cache computed values on Kleene states
     CachingType kleeneCachingType;
     std::unordered_map<long, std::set<double>> kleeneEvaluationCacheMap;
     std::vector<std::set<double>> kleeneEvaluationCacheVector;
-    //Alex->end
+    *///Alex->end
 
     // ActionHashKeyMap contains the hash keys of the actions that influence
     // this Evaluatable (these are added to the state fluent hash keys of a
@@ -220,12 +221,15 @@ public:
     // Evaluates the formula to a discrete probability distribution
     void evaluate(DiscretePD& res, State const& current,
                   ActionState const& actions) {
+        printf("start probabilistic evaluate\n");
         assert(res.isUndefined());
         //Murugeswari
         cachingType = NONE;
-
+	
+	printf("before switch\n");
         switch (cachingType) {
         case NONE:
+	    printf("case none\n");
             formula->evaluateToPD(res, current, actions);
             break;
         case MAP:
@@ -270,6 +274,7 @@ public:
             res = evaluationCacheVector[stateHashKey];
             break;
         }
+	printf("end\n");
     }
 
     bool isProbabilistic() const {
