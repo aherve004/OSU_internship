@@ -23,7 +23,7 @@ extern "C" double next(int a);
 //globals
 bool parseFunctionCalled = false;
 SearchEngine* libSearchEngine = NULL;
-State internalState;
+PDState internalState;
 
 
 //Parse rddl-parser output file
@@ -51,11 +51,7 @@ double step(double s[], int n, int a) {
 	if (!parseFunctionCalled) return -10000.0;
 
 	vector<double> v(s, s+n);
-
-	//Alex : gather State and PDState as State
-	//PDState current = State(v, SearchEngine::horizon);
-	State current = State(v,  SearchEngine::horizon);
-	//Alex :end
+	PDState current = State(v, SearchEngine::horizon);
 
 	printf("actionFluents.size : %ld\n",(SearchEngine::actionFluents).size());
 	int actionIndex = 0;
@@ -73,18 +69,12 @@ double step(double s[], int n, int a) {
 	libSearchEngine->calcReward(current, actionIndex, reward);
 
 	//Get next state s'
-	//Alex : gather State and PDState as State
-	//PDState next;
-	State next;
-	//Alex : end
-
-	printf("11111\n");
+	PDState next;
 	libSearchEngine->calcSuccessorState(current, actionIndex, next);
-	printf("2222\n");
 	for (unsigned int i = 0; i < State::numberOfProbabilisticStateFluents; ++i) {
 		next.sample(i);
 	}
-	printf("3333\n");
+
 	//Set s to s'
 	for (int i=0; i<State::numberOfDeterministicStateFluents; i++) {
 		s[i] = next.deterministicStateFluent(i);
@@ -92,7 +82,7 @@ double step(double s[], int n, int a) {
 	for (int j=0; j<State::numberOfProbabilisticStateFluents; j++) {
 		s[j+State::numberOfDeterministicStateFluents] = next.probabilisticStateFluent(j);
 	}
-	printf("end step\n");
+
 	return reward;
 }
 
@@ -100,9 +90,7 @@ double step(double s[], int n, int a) {
 //Set internal State
 void setInternalState(double s[], int n) {
 	vector<double> v(s, s+n);
-	//Alex : gather State and PDState as State
-	//PDState current = State(v, SearchEngine::horizon);
-	State current = State(v, SearchEngine::horizon);
+	PDState current = State(v, SearchEngine::horizon);
 	internalState = current;
 }
 

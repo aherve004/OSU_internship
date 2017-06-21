@@ -132,10 +132,9 @@ public:
         rewardCPF->evaluate(reward, current, actionStates[actionIndex]);
     }
 
-    //Alex : gather State and PDState as STate
-    //virtual void calcSuccessorState(State const& current, int const& actionIndex, PDState& next) const {}
-    virtual void calcSuccessorState(State const& current, int const& actionIndex, State& next) const {}
-    //Alex : end
+		//Murugeswari
+    virtual void calcSuccessorState(State const& current, int const& actionIndex,
+                            PDState& next) const {}
 
 		//Murugeswari
 		/*
@@ -432,26 +431,21 @@ public:
     *****************************************************************/
 
     // Apply action 'actionIndex' to 'current', resulting in 'next'
-    //Alex : gather State and PDState as State
-    //void calcSuccessorState(State const& current, int const& actionIndex, PDState& next) const {
-    void calcSuccessorState(State const& current, int const& actionIndex, State& next) const { //Alex : end
-	printf("start calcsuccesor\n");
+    void calcSuccessorState(State const& current, int const& actionIndex,
+                            PDState& next) const {
         for (int index = 0; index < State::numberOfDeterministicStateFluents;
              ++index) {
             deterministicCPFs[index]->evaluate(
                 next.deterministicStateFluent(index), current,
                 actionStates[actionIndex]);
         }
-	printf("middle\n");
-	//segfault somewhere in this loop
+
         for (int index = 0; index < State::numberOfProbabilisticStateFluents;
              ++index) {
-	  printf("index :%d\n", index);
-	  probabilisticCPFs[index]->evaluate(
+            probabilisticCPFs[index]->evaluate(
                 next.probabilisticStateFluentAsPD(index), current,
                 actionStates[actionIndex]);
         }
-	printf("end\n");
     }
 
     /*****************************************************************

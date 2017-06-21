@@ -66,7 +66,6 @@ public:
         }
         for (unsigned int i = 0; i < numberOfProbabilisticStateFluents; ++i) {
             probabilisticStateFluents[i] = other.probabilisticStateFluents[i];
-	    probabilisticStateFluentsAsPD[i] = other.probabilisticStateFluentsAsPD[i]; //alex : from PDState
         }
 
         remSteps = other.remSteps;
@@ -84,7 +83,6 @@ public:
         }
         for (unsigned int i = 0; i < numberOfProbabilisticStateFluents; ++i) {
             probabilisticStateFluents[i] = 0.0;
-            probabilisticStateFluentsAsPD[i].reset(); //alex : from PDState
         }
 
         remSteps = _remSteps;
@@ -104,17 +102,6 @@ public:
         std::swap(hashKey, other.hashKey);
         stateFluentHashKeys.swap(other.stateFluentHashKeys);
     }
-
-    //Alex : sample comes from PDState class
-    std::pair<double, double> sample(int varIndex,
-                                     std::vector<int> const& blacklist = {}) {
-        DiscretePD& pd = probabilisticStateFluentsAsPD[varIndex];
-        std::pair<double, double> outcome = pd.sample(blacklist);
-        probabilisticStateFluent(varIndex) = outcome.first;
-        return outcome;
-    }
-    //Alex : end
-
 
     // Calculate the hash key of a State
     static void calcStateHashKey(State& state) {
@@ -198,19 +185,6 @@ public:
         return probabilisticStateFluents[index];
     }
 
-    //Alex : from PDState
-    DiscretePD& probabilisticStateFluentAsPD(int index) {
-        assert(index < probabilisticStateFluentsAsPD.size());
-        return probabilisticStateFluentsAsPD[index];
-    }
-
-    DiscretePD const& probabilisticStateFluentAsPD(int index) const {
-        assert(index < probabilisticStateFluentsAsPD.size());
-        return probabilisticStateFluentsAsPD[index];
-    }
-    //Alex : end
-
-
     int const& stepsToGo() const {
         return remSteps;
     }
@@ -252,15 +226,11 @@ public:
                  ++i) {
                 if (MathUtils::doubleIsSmaller(
                         rhs.probabilisticStateFluents[i],
-                        lhs.probabilisticStateFluents[i]) || 
-		        rhs.probabilisticStateFluentsAsPD[i] < //Alex : PDStateCompare
-		        lhs.probabilisticStateFluentsAsPD[i]) {
+                        lhs.probabilisticStateFluents[i])) {
                     return false;
                 } else if (MathUtils::doubleIsSmaller(
                                lhs.probabilisticStateFluents[i],
-                               rhs.probabilisticStateFluents[i] || 
-		               lhs.probabilisticStateFluentsAsPD[i] < //Alex : PDStateCompare
-		               rhs.probabilisticStateFluentsAsPD[i])) {
+                               rhs.probabilisticStateFluents[i])) {
                     return true;
                 }
             }
@@ -401,8 +371,6 @@ public:
 private:
     std::vector<double> deterministicStateFluents;
     std::vector<double> probabilisticStateFluents;
-
-    std::vector<DiscretePD> probabilisticStateFluentsAsPD; //Alex : from PDState class
 
     int remSteps;
     std::vector<long> stateFluentHashKeys;
