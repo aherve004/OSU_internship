@@ -23,6 +23,8 @@ navigation_inst_mdp__1
 0
 ## 1 if state hashing possible
 1
+## 1 if kleene state hashing possible
+1
 
 
 #####ACTION FLUENTS#####
@@ -84,6 +86,8 @@ switch( (or($s(3) and($a(1) $s(0)) and($a(0) $s(0)) and($a(3) $s(0))) : $c(0)) (
 0
 ## caching type 
 NONE
+## kleene caching type
+NONE
 ## action hash keys
 0 0
 1 1
@@ -105,6 +109,8 @@ switch( (or($s(3) and($a(2) $s(1)) and($a(0) $s(1)) and($a(3) $s(1))) : $c(0)) (
 ## hash index
 1
 ## caching type 
+NONE
+## kleene caching type
 NONE
 ## action hash keys
 0 0
@@ -128,6 +134,8 @@ switch( (or($s(3) and($a(1) $s(2)) and($a(3) $s(2))) : $c(0)) (or(and($a(2) $s(9
 2
 ## caching type 
 NONE
+## kleene caching type
+NONE
 ## action hash keys
 0 0
 1 1
@@ -149,6 +157,8 @@ switch( ($s(3) : $c(1)) (or($s(3) and($a(2) $s(3)) and($a(3) $s(3))) : $c(0)) (o
 ## hash index
 3
 ## caching type 
+NONE
+## kleene caching type
 NONE
 ## action hash keys
 0 0
@@ -172,6 +182,8 @@ switch( (or($s(3) and($a(1) $s(4)) and($a(0) $s(4))) : $c(0)) (or(and($a(2) $s(1
 4
 ## caching type 
 NONE
+## kleene caching type
+NONE
 ## action hash keys
 0 0
 1 1
@@ -193,6 +205,8 @@ switch( (or($s(3) and($a(2) $s(5)) and($a(0) $s(5))) : $c(0)) (or(and($a(1) $s(1
 ## hash index
 5
 ## caching type 
+NONE
+## kleene caching type
 NONE
 ## action hash keys
 0 0
@@ -216,6 +230,8 @@ switch( (or($s(3) and($a(1) $s(6)) and($a(0) $s(6)) and($a(3) $s(6))) : $c(0)) (
 6
 ## caching type 
 NONE
+## kleene caching type
+NONE
 ## action hash keys
 0 0
 1 1
@@ -237,6 +253,8 @@ switch( (or($s(3) and($a(2) $s(7)) and($a(0) $s(7)) and($a(3) $s(7))) : $c(0)) (
 ## hash index
 7
 ## caching type 
+NONE
+## kleene caching type
 NONE
 ## action hash keys
 0 0
@@ -263,6 +281,8 @@ switch( (or($s(3) and($a(1) $s(8)) and($a(2) $s(8)) and($a(0) $s(8)) and($a(3) $
 8
 ## caching type 
 NONE
+## kleene caching type
+NONE
 ## action hash keys
 0 0
 1 1
@@ -284,6 +304,8 @@ switch( (or($s(3) and($a(1) $s(9)) and($a(2) $s(9)) and($a(3) $s(9))) : $c(0)) (
 ## hash index
 9
 ## caching type 
+NONE
+## kleene caching type
 NONE
 ## action hash keys
 0 0
@@ -307,6 +329,8 @@ switch( (or($s(3) and($a(1) $s(10)) and($a(2) $s(10)) and($a(0) $s(10))) : $c(0)
 10
 ## caching type 
 NONE
+## kleene caching type
+NONE
 ## action hash keys
 0 0
 1 1
@@ -329,6 +353,8 @@ switch( (or($s(3) and($a(1) $s(11)) and($a(2) $s(11)) and($a(0) $s(11)) and($a(3
 11
 ## caching type 
 NONE
+## kleene caching type
+NONE
 ## action hash keys
 0 0
 1 1
@@ -350,6 +376,8 @@ NONE
 ## hash index
 12
 ## caching type
+NONE
+## kleene caching type
 NONE
 ## action hash keys
 0 0
@@ -409,38 +437,52 @@ NONE
 0
 ## state hash key (for each value in the domain)
 0 1
+## kleene state hash key base
+0
 ## state fluent hash keys (first line is the number of keys)
 4
 0 5
 2 5
 6 5
 8 5
+## kleene state fluent hash keys (first line is the number of keys)
+0
 
 ## index
 1
 ## state hash key (for each value in the domain)
 0 2
+## kleene state hash key base
+0
 ## state fluent hash keys (first line is the number of keys)
 4
 1 5
 3 5
 7 5
 8 10
+## kleene state fluent hash keys (first line is the number of keys)
+0
 
 ## index
 2
 ## state hash key (for each value in the domain)
 0 4
+## kleene state hash key base
+0
 ## state fluent hash keys (first line is the number of keys)
 3
 0 10
 2 10
 9 5
+## kleene state fluent hash keys (first line is the number of keys)
+0
 
 ## index
 3
 ## state hash key (for each value in the domain)
 0 8
+## kleene state hash key base
+0
 ## state fluent hash keys (first line is the number of keys)
 13
 0 20
@@ -456,48 +498,66 @@ NONE
 10 5
 11 5
 12 1
+## kleene state fluent hash keys (first line is the number of keys)
+0
 
 ## index
 4
 ## state hash key (for each value in the domain)
 0 16
+## kleene state hash key base
+0
 ## state fluent hash keys (first line is the number of keys)
 3
 4 10
 6 20
 10 10
+## kleene state fluent hash keys (first line is the number of keys)
+0
 
 ## index
 5
 ## state hash key (for each value in the domain)
 0 32
+## kleene state hash key base
+0
 ## state fluent hash keys (first line is the number of keys)
 3
 5 10
 7 20
 10 20
+## kleene state fluent hash keys (first line is the number of keys)
+0
 
 ## index
 6
 ## state hash key (for each value in the domain)
 0 64
+## kleene state hash key base
+0
 ## state fluent hash keys (first line is the number of keys)
 4
 0 40
 4 20
 6 40
 11 10
+## kleene state fluent hash keys (first line is the number of keys)
+0
 
 ## index
 7
 ## state hash key (for each value in the domain)
 0 128
+## kleene state hash key base
+0
 ## state fluent hash keys (first line is the number of keys)
 4
 1 20
 5 20
 7 40
 11 20
+## kleene state fluent hash keys (first line is the number of keys)
+0
 
 
 #####HASH KEYS OF PROBABILISTIC STATE FLUENTS#####
@@ -505,6 +565,8 @@ NONE
 0
 ## state hash key (for each value in the domain)
 0 256
+## kleene state hash key base
+0
 ## state fluent hash keys (first line is the number of keys)
 5
 0 80
@@ -512,33 +574,58 @@ NONE
 8 40
 9 20
 11 40
+## kleene state fluent hash keys (first line is the number of keys)
+5
+13870400 13885104
+1 135
+8 135
+9 45
+11 135
 
 ## index
 1
 ## state hash key (for each value in the domain)
 0 512
+## kleene state hash key base
+0
 ## state fluent hash keys (first line is the number of keys)
 4
 2 40
 3 20
 8 80
 9 40
+## kleene state fluent hash keys (first line is the number of keys)
+4
+13850128 135
+3 45
+8 405
+9 135
 
 ## index
 2
 ## state hash key (for each value in the domain)
 0 1024
+## kleene state hash key base
+0
 ## state fluent hash keys (first line is the number of keys)
 4
 4 40
 5 40
 10 40
 11 80
+## kleene state fluent hash keys (first line is the number of keys)
+4
+13846880 135
+5 135
+10 135
+11 405
 
 ## index
 3
 ## state hash key (for each value in the domain)
 0 2048
+## kleene state hash key base
+0
 ## state fluent hash keys (first line is the number of keys)
 5
 6 80
@@ -546,4 +633,11 @@ NONE
 8 160
 10 80
 11 160
+## kleene state fluent hash keys (first line is the number of keys)
+5
+13845984 140162901940152
+7 405
+8 1215
+10 405
+11 1215
 

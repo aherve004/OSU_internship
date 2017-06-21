@@ -11,6 +11,7 @@ using namespace std;
 
 void Parser::parseTask(map<string, int>& stateVariableIndices,
                        vector<vector<string>>& stateVariableValues) {
+  printf("start parsetask\n");
 
   // Read the parser output file
     string problemDesc;
@@ -26,10 +27,12 @@ void Parser::parseTask(map<string, int>& stateVariableIndices,
     desc >> SearchEngine::taskName;
     desc >> SearchEngine::horizon;
     desc >> SearchEngine::discountFactor;
+    //printf("horizon : %d\n", SearchEngine::horizon);
 
     // Parse numbers of fluents and evaluatables
     int numberOfActionFluents;
     desc >> numberOfActionFluents;
+    //printf("numberOfActionsFluents %d\n",numberOfActionFluents);
 
     desc >> State::numberOfDeterministicStateFluents;
     desc >> State::numberOfProbabilisticStateFluents;
@@ -40,7 +43,7 @@ void Parser::parseTask(map<string, int>& stateVariableIndices,
     desc >> SearchEngine::numberOfActions;
 
     desc >> State::numberOfStateFluentHashKeys;
-
+    printf("cc :11111111111\n");
     //Alex : removing Kleene things
     //->start
     /*
@@ -71,6 +74,7 @@ void Parser::parseTask(map<string, int>& stateVariableIndices,
     desc >> SearchEngine::taskIsDeterministic;
     desc >> State::stateHashingPossible;
     
+    printf("cc :222222222222222\n");
 
     //Alex : removing Kleene things
     //->start
@@ -210,6 +214,7 @@ void Parser::parseTask(map<string, int>& stateVariableIndices,
     State::stateFluentHashKeysOfProbabilisticStateFluents.resize(
         State::numberOfProbabilisticStateFluents);
 
+    printf("cc  :333333333333\n");
 
     //Alex : removing Kleene things
     //->start
@@ -249,9 +254,11 @@ void Parser::parseTask(map<string, int>& stateVariableIndices,
         stateVariableValues.push_back(
             SearchEngine::probabilisticCPFs[i]->head->values);
     }
+    printf("end parsetask\n");
 }
 
 void Parser::parseActionFluent(stringstream& desc) const {
+  printf("start parseactionfluent\n");
     int index;
     desc >> index;
 
@@ -274,21 +281,28 @@ void Parser::parseActionFluent(stringstream& desc) const {
     }
     SearchEngine::actionFluents.push_back(
         new ActionFluent(index, name, values));
+    printf("end parseactionfluent\n");
 }
 
 void Parser::parseCPF(stringstream& desc, vector<string>& deterministicFormulas,
                       vector<string>& probabilisticFormulas,
                       vector<string>& determinizedFormulas,
                       bool const& isProbabilistic) const {
+  printf("start parseCPF\n");
     int index;
     desc >> index;
+    printf("index: %d\n",index);
 
     string name;
     desc.ignore(1, '\n');
     getline(desc, name, '\n');
 
+    printf("name : %s\n", name.c_str());
+
     int numberOfValues;
     desc >> numberOfValues;
+
+    printf("1111, numberofValues = %d\n", numberOfValues);
 
     vector<string> values;
     for (size_t j = 0; j < numberOfValues; ++j) {
@@ -299,8 +313,10 @@ void Parser::parseCPF(stringstream& desc, vector<string>& deterministicFormulas,
         desc >> value;
         assert(val == j);
         values.push_back(value);
+	//printf("j = %d\n",j);
     }
 
+    printf("222\n");
 
     string formula;
     desc.ignore(1, '\n');
@@ -314,6 +330,7 @@ void Parser::parseCPF(stringstream& desc, vector<string>& deterministicFormulas,
         deterministicFormulas.push_back(formula);
     }
 
+    printf("333\n");
 
     int hashIndex;
     desc >> hashIndex;
@@ -348,9 +365,11 @@ void Parser::parseCPF(stringstream& desc, vector<string>& deterministicFormulas,
         SearchEngine::deterministicCPFs.push_back(cpf);
         SearchEngine::allCPFs.push_back(cpf);
     }
+    printf("end parseCPF\n");
 }
 
 void Parser::parseRewardFunction(stringstream& desc) const {
+  printf("start parseRewardFunction\n");
     string formulaAsString;
     desc.ignore(1, '\n');
     getline(desc, formulaAsString, '\n');
@@ -374,9 +393,11 @@ void Parser::parseRewardFunction(stringstream& desc) const {
 
     parseCachingType(desc, nullptr, SearchEngine::rewardCPF);
     parseActionHashKeyMap(desc, nullptr, SearchEngine::rewardCPF);
+    printf("end parseRewardFunction\n");
 }
 
 void Parser::parseActionPrecondition(stringstream& desc) const {
+  printf("start parseActionPrecondition\n");
     int index;
     desc >> index;
 
@@ -401,11 +422,13 @@ void Parser::parseActionPrecondition(stringstream& desc) const {
 
     parseCachingType(desc, nullptr, precond);
     parseActionHashKeyMap(desc, nullptr, precond);
+    printf("end parseactionprecondition\n");
 }
 
 void Parser::parseCachingType(stringstream& desc,
                               ProbabilisticEvaluatable* probEval,
                               DeterministicEvaluatable* detEval) const {
+  printf("start parseCachingType\n");
     string cachingType;
     desc >> cachingType;
 
@@ -462,6 +485,7 @@ void Parser::parseCachingType(stringstream& desc,
         }
     }
     
+    printf("end parsecachingtype\n");
     //Alex : removing Kleene things
     //->start
     /*
@@ -500,6 +524,7 @@ void Parser::parseCachingType(stringstream& desc,
 void Parser::parseActionHashKeyMap(stringstream& desc,
                                    ProbabilisticEvaluatable* probEval,
                                    DeterministicEvaluatable* detEval) const {
+  printf("start pasreactionhashkeymap\n");
     detEval->actionHashKeyMap.resize(SearchEngine::numberOfActions);
     if (probEval) {
         probEval->actionHashKeyMap.resize(SearchEngine::numberOfActions);
@@ -514,15 +539,18 @@ void Parser::parseActionHashKeyMap(stringstream& desc,
             probEval->actionHashKeyMap[i] = detEval->actionHashKeyMap[i];
         }
     }
+    printf("end pasreactionhashkeymap\n");
 }
 
 void Parser::parseActionState(stringstream& desc) const {
+  printf("start parseactionstate\n");
     int index;
     desc >> index;
 
     vector<int> values(SearchEngine::actionFluents.size());
     vector<ActionFluent*> scheduledActionFluents;
 
+    printf("loop 1\n");
     for (size_t j = 0; j < SearchEngine::actionFluents.size(); ++j) {
         desc >> values[j];
         if (values[j] == 1) {
@@ -535,6 +563,7 @@ void Parser::parseActionState(stringstream& desc) const {
     vector<DeterministicEvaluatable*> relevantPreconditions(
         numberOfRelevantPreconditions);
     
+    printf("loop 2, number of relevant preconditions = %d\n", numberOfRelevantPreconditions);
     for (size_t j = 0; j < numberOfRelevantPreconditions; ++j) {
         int precondIndex;
         desc >> precondIndex;
@@ -544,9 +573,11 @@ void Parser::parseActionState(stringstream& desc) const {
 
     SearchEngine::actionStates.push_back(ActionState(
         index, values, scheduledActionFluents, relevantPreconditions));
+    printf("end parseactionstate\n");
 }
 
 void Parser::parseHashKeys(stringstream& desc) const {
+    printf("start parseHashkeys\n");
     for (size_t i = 0; i < State::numberOfDeterministicStateFluents; ++i) {
         int index;
         desc >> index;
@@ -564,6 +595,7 @@ void Parser::parseHashKeys(stringstream& desc) const {
             }
         }
 
+	printf("1111 parseHashkeys\n");
 	//Alex : removing Kleene things
 	//->start
 	/*
@@ -581,7 +613,7 @@ void Parser::parseHashKeys(stringstream& desc) const {
             State::stateFluentHashKeysOfDeterministicStateFluents[index]
                 .push_back(make_pair(var, key));
         }
-
+	printf("2222 parseHashkeys\n");
 	//Alex : removing Kleene things
 	//->start
 	/*
@@ -612,6 +644,7 @@ void Parser::parseHashKeys(stringstream& desc) const {
                     State::stateHashKeysOfProbabilisticStateFluents[index][j];
             }
         }
+	printf("333 parseHashkeys\n");
 	//Alex : removing Kleene things
 	//->start
 	/*
@@ -630,7 +663,7 @@ void Parser::parseHashKeys(stringstream& desc) const {
             State::stateFluentHashKeysOfProbabilisticStateFluents[index]
                 .push_back(make_pair(var, key));
         }
-
+	printf("444 parseHashkeys\n");
 	//Alex : removing Kleene things
 	//->start
 	/*
@@ -645,6 +678,7 @@ void Parser::parseHashKeys(stringstream& desc) const {
         }
 	*///Alex->end
     }
+    printf("end parseHashkeys\n");
 }
 
 //Murugeswari
@@ -679,6 +713,7 @@ void Parser::parseTrainingSet(stringstream& desc) const {
 // unit tests where the static variables have to be reset between test
 // instances.
 void Parser::resetStatics() const {
+    printf("start resetStatics\n");
     SearchEngine::actionFluents.clear();
     SearchEngine::stateFluents.clear();
     SearchEngine::probabilisticCPFs.clear();
@@ -693,4 +728,5 @@ void Parser::resetStatics() const {
     State::stateFluentHashKeysOfDeterministicStateFluents.clear();
     State::stateFluentHashKeysOfProbabilisticStateFluents.clear();
     //KleeneState::indexToStateFluentHashKeyMap.clear(); //Alex : removing Kleene things
+    printf("end resetStatics\n");
 }

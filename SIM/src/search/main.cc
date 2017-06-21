@@ -42,7 +42,7 @@ void parse(char* pfile) {
 	libSearchEngine = new ProbabilisticSearchEngine("lib");
 
 	// Test
-	//SearchEngine::printTask(cout);
+	SearchEngine::printTask(cout);
 }
 
 
@@ -57,12 +57,13 @@ double step(double s[], int n, int a) {
 	State current = State(v,  SearchEngine::horizon);
 	//Alex :end
 
+	printf("actionFluents.size : %ld\n",(SearchEngine::actionFluents).size());
 	int actionIndex = 0;
 	if (a > 0) {
 		actionIndex = (SearchEngine::actionFluents).size() - a + 1;
 		
 		//Test
-		//cout << "a: " << a << " actionIndex: " << actionIndex << endl;
+		cout << "a: " << a << " actionIndex: " << actionIndex << endl;
 		//(libSearchEngine->actionStates[actionIndex]).printCompact(cout);
 		//cout << endl;
 	}
