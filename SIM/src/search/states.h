@@ -18,7 +18,7 @@ class DeterministicEvaluatable;
 class State {
 public:
   //friend class KleeneState; //Alex : removing Kleene things
-    friend class PDState;
+  //friend class PDState; //Alex :PDState inherits from State ->private attributes become protected 
 
     State(int const& _remSteps = -1)
         : deterministicStateFluents(numberOfDeterministicStateFluents, 0.0),
@@ -60,6 +60,7 @@ public:
           stateFluentHashKeys(other.stateFluentHashKeys),
           hashKey(other.hashKey) {}
 
+  /*
     virtual void setTo(State const& other) {
         for (unsigned int i = 0; i < numberOfDeterministicStateFluents; ++i) {
             deterministicStateFluents[i] = other.deterministicStateFluents[i];
@@ -76,8 +77,8 @@ public:
 
         hashKey = other.hashKey;
     }
-
-    virtual void reset(int _remSteps) {
+  */
+    /*    virtual void reset(int _remSteps) {
         for (unsigned int i = 0; i < numberOfDeterministicStateFluents; ++i) {
             deterministicStateFluents[i] = 0.0;
         }
@@ -92,8 +93,8 @@ public:
         }
 
         hashKey = -1;
-    }
-
+	}*/
+  /*
     void swap(State& other) {
         deterministicStateFluents.swap(other.deterministicStateFluents);
         probabilisticStateFluents.swap(other.probabilisticStateFluents);
@@ -102,7 +103,7 @@ public:
         std::swap(hashKey, other.hashKey);
         stateFluentHashKeys.swap(other.stateFluentHashKeys);
     }
-
+  */
     // Calculate the hash key of a State
     static void calcStateHashKey(State& state) {
         if (stateHashingPossible) {
@@ -203,6 +204,8 @@ public:
         return stateFluentHashKeys[index];
     }
 
+    //Alex :  CompareIgnoringStepsToGo is never used, no compilation errors without it
+    /*
     struct CompareIgnoringStepsToGo {
         bool operator()(State const& lhs, State const& rhs) const {
             if ((lhs.hashKey >= 0) && (rhs.hashKey >= 0)) {
@@ -238,7 +241,7 @@ public:
             return false;
         }
     };
-
+    */
     struct HashWithRemSteps {
         // Hash function adapted from Python's hash function for tuples (and
         // found in the FastDownward code from http://www.fast-downward.org/)
@@ -339,7 +342,7 @@ public:
             return true;
         }
     };
-
+    
     void printCompact(std::ostream& out) const;
     void print(std::ostream& out) const;
 
@@ -368,7 +371,8 @@ public:
     static std::vector<std::vector<std::pair<int, long>>>
         stateFluentHashKeysOfProbabilisticStateFluents;
 
-private:
+protected: //Alex : PDState inherits from State, private becomes protected so as to not have friend relation
+//private  
     std::vector<double> deterministicStateFluents;
     std::vector<double> probabilisticStateFluents;
 
@@ -420,12 +424,12 @@ public:
         : State(_remSteps),
           probabilisticStateFluentsAsPD(numberOfProbabilisticStateFluents,
                                         DiscretePD()) {}
-
+  
     PDState(State const& origin)
         : State(origin),
           probabilisticStateFluentsAsPD(numberOfProbabilisticStateFluents,
                                         DiscretePD()) {}
-
+  
     DiscretePD& probabilisticStateFluentAsPD(int index) {
         assert(index < probabilisticStateFluentsAsPD.size());
         return probabilisticStateFluentsAsPD[index];
@@ -435,15 +439,15 @@ public:
         assert(index < probabilisticStateFluentsAsPD.size());
         return probabilisticStateFluentsAsPD[index];
     }
-
+    /*
     void reset(int _remSteps) {
         State::reset(_remSteps);
 
         for (unsigned int i = 0; i < numberOfProbabilisticStateFluents; ++i) {
             probabilisticStateFluentsAsPD[i].reset();
         }
-    }
-
+	}*/
+    /*
     void setTo(PDState const& other) {
         State::setTo(other);
 
@@ -452,7 +456,7 @@ public:
                 other.probabilisticStateFluentsAsPD[i];
         }
     }
-
+    */
     std::pair<double, double> sample(int varIndex,
                                      std::vector<int> const& blacklist = {}) {
         DiscretePD& pd = probabilisticStateFluentsAsPD[varIndex];
@@ -462,7 +466,7 @@ public:
     }
 
     // Remaining steps are not considered here!
-    struct PDStateCompare {
+    /*struct PDStateCompare {
         bool operator()(PDState const& lhs, PDState const& rhs) const {
             for (unsigned int i = 0; i < numberOfDeterministicStateFluents;
                  ++i) {
@@ -490,7 +494,7 @@ public:
             return false;
         }
     };
-
+    */
     void printPDState(std::ostream& out) const;
     void printPDStateCompact(std::ostream& out) const;
 

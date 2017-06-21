@@ -121,29 +121,41 @@ class RDDLEnv() :
 	def _close(self):
 		print("Environment Closed")
 
-
 if __name__ == '__main__':
 	#ENV = gym.make('RDDL-v1')
 	#ENV.seed(0)
+        problem_list = ["game_of_life","navigation","sysadmin","tamarisk"]
+	NUM_EPISODES = 100
+        for prob in problem_list :
+                for j in range(10) :
+                        ENV = RDDLEnv(prob, str(j+1))
+                        #ENV = RDDLEnv("navigation", "1")
 
-	#ENV = RDDLEnv("sysadmin", "1")
-        ENV = RDDLEnv("navigation", "1")
-
-	NUM_EPISODES = 1
-
-	for i in range(NUM_EPISODES):
-		reward = 0	# epsiode reward
-		rwd = 0 # step reward
-		curr, done = ENV._reset()	# current state and end-of-episode flag
-                t0 = time.clock()
-		while not done :
-			action = random.randint(0, ENV.num_action_vars) # choose a random action
-			#action = 0
-			nxt, rwd, done, _ = ENV._step(action) # next state and step reward
-			print('state: {}  action: {}  reward: {} next: {}'.format(curr, action, rwd, nxt))
-			curr = nxt
-			reward += rwd
-                print('time to finish the while loop = {}' .format(time.clock() -t0))
-		print('Episode Reward: {}'.format(reward))
-                print()
-	ENV._close()
+                        time_sum = 0.0
+                        reward_sum = 0.0
+                        
+                        for i in range(NUM_EPISODES):
+                                reward = 0	# epsiode reward
+                                rwd = 0 # step reward
+                                curr, done = ENV._reset()	# current state and end-of-episode flag
+                                while not done :
+                                        action = random.randint(0, ENV.num_action_vars) # choose a random action
+                                        #action = 0
+                                        t0 = time.clock()
+                                        nxt, rwd, done, _ = ENV._step(action) # next state and step reward
+                                        time_sum += time.clock() - t0
+                                        #print('state: {}  action: {}  reward: {} next: {}'.format(curr, action, rwd, nxt))
+                                        curr = nxt
+                                        reward += rwd
+                                        reward_sum += reward
+                                        #print('time to finish the while loop = {}' .format(time_sum))
+                                        #print('Episode Reward: {}'.format(reward))
+                                        #print()
+                        print('\n')
+                        print('#########################################################################')
+                        print('##problem : {}_inst_mdp__{}##' .format(prob, j+1))
+                        print('time average : {} for a run over {} episodes' .format(time_sum/NUM_EPISODES, NUM_EPISODES))
+                        print('reward average : {}' .format(reward_sum/NUM_EPISODES))
+                        ENV._close()
+                        print('#########################################################################')
+                        print('\n')

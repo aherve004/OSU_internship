@@ -106,12 +106,13 @@ public:
 
     //Alex : removing Kleene things
     //->start
+    /*
     // KleeneCachingType describes which of the two (if any) datastructures is
-    // used to cache computed values on Kleene states
+    // used to cache computed values on Kleene states    
     CachingType kleeneCachingType;
     std::unordered_map<long, std::set<double>> kleeneEvaluationCacheMap;
     std::vector<std::set<double>> kleeneEvaluationCacheVector;
-    //Alex->end
+    *///Alex->end
 
     // ActionHashKeyMap contains the hash keys of the actions that influence
     // this Evaluatable (these are added to the state fluent hash keys of a
