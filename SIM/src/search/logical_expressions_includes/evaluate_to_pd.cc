@@ -1,3 +1,5 @@
+#include <iostream> //Alex : debug
+
 void LogicalExpression::evaluateToPD(DiscretePD& /*res*/,
                                      State const& /*current*/,
                                      ActionState const& /*actions*/) const {
@@ -415,4 +417,6 @@ void MultiConditionChecker::evaluateToPD(DiscretePD& res, State const& current,
 
     res.assignDiscrete(valProbPairs);
     assert(res.isWellDefined());
+
+
 }

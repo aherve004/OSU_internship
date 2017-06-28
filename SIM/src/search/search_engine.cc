@@ -74,10 +74,14 @@ int SearchEngine::numberOfActions = -1;
   //  SearchEngine::finalRewardCalculationMethod = NOOP;
 //vector<int> SearchEngine::candidatesForOptimalFinalAction;
 
-bool SearchEngine::cacheApplicableActions = true;
+//Alex : cacheApplicableActions has been removed since getApplicableActions function has been removed
+//bool SearchEngine::cacheApplicableActions = true;
+
 //Murugeswari
 //bool SearchEngine::rewardLockDetected = true;
-int SearchEngine::goalTestActionIndex = -1;
+
+//Alex : goalTestActionIndex has been removed
+//int SearchEngine::goalTestActionIndex = -1;
 
 //Murugeswari
 //bdd SearchEngine::cachedDeadEnds = bddfalse;
@@ -86,15 +90,17 @@ int SearchEngine::goalTestActionIndex = -1;
 //bool ProbabilisticSearchEngine::hasUnreasonableActions = true;
 //bool DeterministicSearchEngine::hasUnreasonableActions = true;
 
-SearchEngine::ActionHashMap ProbabilisticSearchEngine::applicableActionsCache(
-    520241);
-SearchEngine::ActionHashMap DeterministicSearchEngine::applicableActionsCache(
-    520241);
+//Alex : applicableActionsCache has been removed since getApplicableActions function has been removed
+//SearchEngine::ActionHashMap ProbabilisticSearchEngine::applicableActionsCache(520241);
+
+//Alex : removal of DeterministicSearchEngine
+//SearchEngine::ActionHashMap DeterministicSearchEngine::applicableActionsCache(520241);
 
 SearchEngine::StateValueHashMap ProbabilisticSearchEngine::stateValueCache(
     62233);
-SearchEngine::StateValueHashMap DeterministicSearchEngine::stateValueCache(
-    520241);
+
+//Alex : removal of DeterministicSearchEngine
+//SearchEngine::StateValueHashMap DeterministicSearchEngine::stateValueCache(520241);
 
 /******************************************************************
                      Search Engine Creation

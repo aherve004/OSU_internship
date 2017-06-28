@@ -1,6 +1,7 @@
 #ifndef EVALUATABLES_H
 #define EVALUATABLES_H
 
+#include <iostream>
 #include "logical_expressions.h"
 
 #include <unordered_map>
@@ -250,7 +251,7 @@ public:
             assert((current.stateFluentHashKey(hashIndex) >= 0) &&
                    (actionHashKeyMap[actions.index] >= 0) &&
                    (stateHashKey >= 0));
-
+ 
             if (evaluationCacheMap.find(stateHashKey) !=
                 evaluationCacheMap.end()) {
                 res = evaluationCacheMap[stateHashKey];

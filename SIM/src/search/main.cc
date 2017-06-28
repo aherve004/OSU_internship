@@ -53,15 +53,19 @@ double step(double s[], int n, int a) {
 	vector<double> v(s, s+n);
 	PDState current = State(v, SearchEngine::horizon);
 
+	//Alex : display for test
+	cout<<endl;
+	current.printCompact(cout);
+
 	int actionIndex = 0;
 	if (a > 0) {
 		actionIndex = (SearchEngine::actionFluents).size() - a + 1;
-		
-		//Test
-		//cout << "a: " << a << " actionIndex: " << actionIndex << endl;
-		//(libSearchEngine->actionStates[actionIndex]).printCompact(cout);
-		//cout << endl;
 	}
+	
+	//Alex : Test
+	cout << "a: " << a << " actionIndex: " << actionIndex << endl;
+	(libSearchEngine->actionStates[actionIndex]).printCompact(cout);
+	cout << endl;
 
 	//Compute Reward
 	double reward = 0;
@@ -81,6 +85,10 @@ double step(double s[], int n, int a) {
 	for (int j=0; j<State::numberOfProbabilisticStateFluents; j++) {
 		s[j+State::numberOfDeterministicStateFluents] = next.probabilisticStateFluent(j);
 	}
+
+	//Alex : display for test
+	next.printCompact(cout);
+	cout<<endl;
 
 	return reward;
 }
@@ -132,14 +140,14 @@ int main(int argc, char** argv) {
   parse(argv[1]);
   printf("parser ended\n");
   for (int i=0; i<n+1; i++) {
-    printf("step %d\n", i);
+    printf("\nstep %d", i);
     cout << step(s, n, i) << endl;
   }
   
-  setInternalState(s, n);
+  /*  setInternalState(s, n);
   for (int i=0; i<n+1; i++) {
     cout << next(i) << endl;
   }
- 
+  */
   return 0;
 }

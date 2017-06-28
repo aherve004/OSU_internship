@@ -69,6 +69,8 @@ public:
 		//:
 
 protected:
+    //Alex : the 3 last attributes have been removed
+    /*
     SearchEngine(std::string _name)
         : name(_name),
           cachingEnabled(true),
@@ -77,6 +79,11 @@ protected:
           cacheRewardLocks(true),
           maxSearchDepth(horizon),
           timeout(1.0) {}
+    */
+    //Alex : new constructor without the attributes which have been removed
+    SearchEngine(std::string _name)
+      : name(_name),
+      cachingEnabled(true) {}
 
     /*****************************************************************
                          Main search functions
@@ -104,6 +111,9 @@ public:
                                  std::vector<int> const& actionsToExpand,
                                  std::vector<double>& qValues) = 0;*/
 
+
+    //Alex : getApplicableActions has been removed
+    /*
     // Methods for action applicability and pruning
     virtual std::vector<int> getApplicableActions(State const& state) const = 0;
 
@@ -117,6 +127,7 @@ public:
         }
         return result;
     }
+    */
 
     /*****************************************************************
                         Calculation of reward
@@ -275,15 +286,18 @@ public:
     //static FinalRewardCalculationMethod finalRewardCalculationMethod;
     //static std::vector<int> candidatesForOptimalFinalAction;
 
+    //Alex :getApplicableActions is removed then this attribute is useless
     // Is true if applicable actions should be cached
-    static bool cacheApplicableActions;
+    //static bool cacheApplicableActions;
 
     // Is true if a reward lock was detected in the training phase
 		//Murugeswari
     //static bool rewardLockDetected;
 
+
+    //Alex : particularity of the prost with the reward locks but not needed in the project
     // The index of this action is used to check if a state is a goal
-    static int goalTestActionIndex;
+    //static int goalTestActionIndex;
 
 		//Murugeswari
     // The BDDs where dead ends and goals are cached
@@ -305,10 +319,14 @@ protected:
 
     // Parameter
     bool cachingEnabled;
+
+    //Alex : not used in the project, then they are not needed
+    /*
     bool useRewardLockDetection;
     bool cacheRewardLocks;
     int maxSearchDepth;
     double timeout;
+    */
 
     /*****************************************************************
                            Printing and statistics
@@ -359,12 +377,16 @@ public:
     // Cache for state values of solved states
     static StateValueHashMap stateValueCache;
 
+    //Alex : only used to get applicable actions then if getApplicableActions is not needed, this attribute is not needed too
     // Cache for applicable reasonable actions
-    static ActionHashMap applicableActionsCache;
+    //static ActionHashMap applicableActionsCache;
 
     /*****************************************************************
                  Calculation of applicable actions
     *****************************************************************/
+
+    //Alex : getApplicableActions is not needed
+    /*
 
     // Returns a vector ("res") that encodes applicable and reasonable actions.
     // If res[i] = i, the action with index i is applicable, and if res[i] = -1
@@ -406,6 +428,9 @@ public:
                     }
                 }
             } else { */
+
+    /* Alex : removal of getApplicableActions 
+
                 for (size_t index = 0; index < numberOfActions; ++index) {
                     if (actionIsApplicable(actionStates[index], state)) {
                         res[index] = index;
@@ -422,6 +447,7 @@ public:
 
         return res;
     }
+*/
 
 //Murugeswari
 //protected:
@@ -498,7 +524,8 @@ private:
 /*****************************************************************
                    DETERMINISTIC SEARCH ENGINE
 *****************************************************************/
-
+//Alex : the deterministic search engine is not needed
+/*
 class DeterministicSearchEngine : public SearchEngine {
 public:
     DeterministicSearchEngine(std::string _name) : SearchEngine(_name) {}
@@ -518,17 +545,24 @@ public:
     /*****************************************************************
                     Calculation of state transition
     *****************************************************************/
+    
 
     // Apply action 'actionIndex' in the determinization to 'current', get state
     // 'next' and yield reward 'reward'
+    //Alex : calcSuccessorState is useless
+    /*
     void calcStateTransition(State const& current, int const& actionIndex,
                              State& next, double& reward) const {
         calcSuccessorState(current, actionIndex, next);
         calcReward(current, actionIndex, reward);
     }
+    *///Alex : end
 
     // Apply action 'actionIndex' in the determinization to 'current', resulting
     // in 'next'.
+
+/* Alex : removal of DeterministicSearchEngine
+
     void calcSuccessorState(State const& current, int const& actionIndex,
                             State& next) const {
         for (size_t index = 0; index < State::numberOfDeterministicStateFluents;
@@ -552,6 +586,8 @@ public:
     /*****************************************************************
                  Calculation of applicable actions
     *****************************************************************/
+
+/* Alex : removal of DeterministicSearchEngine
 
     // Returns a vector ("res") that encodes applicable and reasonable actions.
     // If res[i] = i, the action with index i is applicable, and if res[i] = -1
@@ -596,6 +632,9 @@ public:
                     }
                 }
             } else { */
+
+/* Alex : removal of DeterministicSearchEngine
+
                 for (size_t actionIndex = 0; actionIndex < numberOfActions;
                      ++actionIndex) {
                     if (actionIsApplicable(actionStates[actionIndex], state)) {
@@ -613,5 +652,6 @@ public:
         return res;
     }
 };
+*///Alex :DeterministicSearchEngine end
 
 #endif

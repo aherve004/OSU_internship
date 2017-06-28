@@ -1,3 +1,5 @@
+#include <iostream>//Alex : debug
+
 void LogicalExpression::evaluate(double& /*res*/, State const& /*current*/,
                                  ActionState const& /*actions*/) const {
     assert(false);
