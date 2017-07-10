@@ -187,7 +187,7 @@ private:
                  Calculation of applicable actions
     *****************************************************************/
 
-protected:
+public:
     bool actionIsApplicable(ActionState const& action,
                             State const& current) const {
         double res = 0.0;
@@ -459,6 +459,8 @@ public:
     // Apply action 'actionIndex' to 'current', resulting in 'next'
     void calcSuccessorState(State const& current, int const& actionIndex,
                             PDState& next) const {
+
+
         for (int index = 0; index < State::numberOfDeterministicStateFluents;
              ++index) {
             deterministicCPFs[index]->evaluate(
@@ -472,6 +474,7 @@ public:
                 next.probabilisticStateFluentAsPD(index), current,
                 actionStates[actionIndex]);
         }
+
     }
 
     /*****************************************************************

@@ -224,27 +224,28 @@ public:
                   ActionState const& actions) {
         assert(res.isUndefined());
         //Murugeswari
-        cachingType = NONE;
+	cachingType = NONE;
 
         switch (cachingType) {
         case NONE:
             formula->evaluateToPD(res, current, actions);
             break;
-        case MAP:
-            stateHashKey = current.stateFluentHashKey(hashIndex) +
+        case MAP:	  
+	  stateHashKey = current.stateFluentHashKey(hashIndex) +
                            actionHashKeyMap[actions.index];
-            assert((current.stateFluentHashKey(hashIndex) >= 0) &&
+	  assert((current.stateFluentHashKey(hashIndex) >= 0) &&
                    (actionHashKeyMap[actions.index] >= 0) &&
                    (stateHashKey >= 0));
 
-            if (evaluationCacheMap.find(stateHashKey) !=
-                evaluationCacheMap.end()) {
-                res = evaluationCacheMap[stateHashKey];
-            } else {
-                formula->evaluateToPD(res, current, actions);
-                evaluationCacheMap[stateHashKey] = res;
-            }
-            break;
+	  if (evaluationCacheMap.find(stateHashKey) !=
+	      evaluationCacheMap.end()) {
+	    res = evaluationCacheMap[stateHashKey];
+	    
+	  } else {
+	    formula->evaluateToPD(res, current, actions);
+	    evaluationCacheMap[stateHashKey] = res;
+	  }
+	  break;
         case DISABLED_MAP:
             stateHashKey = current.stateFluentHashKey(hashIndex) +
                            actionHashKeyMap[actions.index];

@@ -372,7 +372,7 @@ public:
         stateFluentHashKeysOfProbabilisticStateFluents;
 
 protected: //Alex : PDState inherits from State, private becomes protected so as to not have friend relation
-//private  
+//private
     std::vector<double> deterministicStateFluents;
     std::vector<double> probabilisticStateFluents;
 

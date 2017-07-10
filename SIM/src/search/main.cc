@@ -41,8 +41,6 @@ void parse(char* pfile) {
 	MathUtils::rnd->seed(time(0));
 	libSearchEngine = new ProbabilisticSearchEngine("lib");
 
-	// Test
-	//SearchEngine::printTask(cout);
 }
 
 
@@ -53,19 +51,21 @@ double step(double s[], int n, int a) {
 	vector<double> v(s, s+n);
 	PDState current = State(v, SearchEngine::horizon);
 
-	//Alex : display for test
-	cout<<endl;
-	current.printCompact(cout);
-
 	int actionIndex = 0;
 	if (a > 0) {
 		actionIndex = (SearchEngine::actionFluents).size() - a + 1;
 	}
 	
-	//Alex : Test
-	cout << "a: " << a << " actionIndex: " << actionIndex << endl;
+	//Display action for debug
+	/*cout << "action : ";
 	(libSearchEngine->actionStates[actionIndex]).printCompact(cout);
 	cout << endl;
+	*/
+
+	//Check the preconditions, Alex
+	if(!libSearchEngine->actionIsApplicable(SearchEngine::actionStates[actionIndex], current)){
+	  return -9999; //We may return an error instead of a reward 
+	}
 
 	//Compute Reward
 	double reward = 0;
@@ -73,7 +73,11 @@ double step(double s[], int n, int a) {
 
 	//Get next state s'
 	PDState next;
+	
+
 	libSearchEngine->calcSuccessorState(current, actionIndex, next);
+	
+	//Sample
 	for (unsigned int i = 0; i < State::numberOfProbabilisticStateFluents; ++i) {
 		next.sample(i);
 	}
@@ -85,10 +89,6 @@ double step(double s[], int n, int a) {
 	for (int j=0; j<State::numberOfProbabilisticStateFluents; j++) {
 		s[j+State::numberOfDeterministicStateFluents] = next.probabilisticStateFluent(j);
 	}
-
-	//Alex : display for test
-	next.printCompact(cout);
-	cout<<endl;
 
 	return reward;
 }
@@ -135,12 +135,12 @@ int main(int argc, char** argv) {
 			1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
 			1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
   */
-  double s[] = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
+  double s[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
   int n = end(s) - begin(s);
   parse(argv[1]);
   printf("parser ended\n");
   for (int i=0; i<n+1; i++) {
-    printf("\nstep %d", i);
+    printf("\nstep %d\n", i);
     cout << step(s, n, i) << endl;
   }
   
