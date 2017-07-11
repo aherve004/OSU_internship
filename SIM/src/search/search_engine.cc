@@ -74,8 +74,7 @@ int SearchEngine::numberOfActions = -1;
   //  SearchEngine::finalRewardCalculationMethod = NOOP;
 //vector<int> SearchEngine::candidatesForOptimalFinalAction;
 
-//Alex : cacheApplicableActions has been removed since getApplicableActions function has been removed
-//bool SearchEngine::cacheApplicableActions = true;
+bool SearchEngine::cacheApplicableActions = true;
 
 //Murugeswari
 //bool SearchEngine::rewardLockDetected = true;
@@ -90,8 +89,8 @@ int SearchEngine::numberOfActions = -1;
 //bool ProbabilisticSearchEngine::hasUnreasonableActions = true;
 //bool DeterministicSearchEngine::hasUnreasonableActions = true;
 
-//Alex : applicableActionsCache has been removed since getApplicableActions function has been removed
-//SearchEngine::ActionHashMap ProbabilisticSearchEngine::applicableActionsCache(520241);
+
+SearchEngine::ActionHashMap ProbabilisticSearchEngine::applicableActionsCache(520241);
 
 //Alex : removal of DeterministicSearchEngine
 //SearchEngine::ActionHashMap DeterministicSearchEngine::applicableActionsCache(520241);

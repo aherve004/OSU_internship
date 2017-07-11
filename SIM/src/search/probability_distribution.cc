@@ -39,8 +39,11 @@ void DiscretePD::print(ostream& out) const {
     out << "]" << endl;
 }
 
-pair<double, double> DiscretePD::sample(vector<int> const& blacklist) const {
+pair<double, double> DiscretePD::sample(/*vector<int> const& blacklist*/) const { //Alex : blacklist removal
     assert(isWellDefined());
+
+    //Alex : blacklist removal because not required
+    /*
     double remainingProbSum = 1.0;
     for (int i : blacklist) {
         remainingProbSum -= probabilities[i];
@@ -48,15 +51,26 @@ pair<double, double> DiscretePD::sample(vector<int> const& blacklist) const {
     assert(MathUtils::doubleIsGreater(remainingProbSum, 0.0));
 
     double randNum = MathUtils::rnd->genDouble(0.0, remainingProbSum);
+    */
+
+    double randNum = MathUtils::rnd->genDouble(0.0, 1.0); //Alex : remainingProbSum replaced by the initial value
     double probSum = 0.0;
 
     for (int i = 0; i < values.size(); ++i) {
+      //Alex : blacklist removal
+      /*
         if (find(blacklist.begin(), blacklist.end(), i) == blacklist.end()) {
             probSum += probabilities[i];
             if (MathUtils::doubleIsSmallerOrEqual(randNum, probSum)) {
                 return std::make_pair(values[i], probabilities[i]);
             }
         }
+      */
+      probSum += probabilities[i];
+      if (MathUtils::doubleIsSmallerOrEqual(randNum, probSum)) {
+	return std::make_pair(values[i], probabilities[i]);
+      }
+      //Alex : end
     }
     assert(false);
     return std::make_pair(0, 0);

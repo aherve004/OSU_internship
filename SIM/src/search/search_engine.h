@@ -112,8 +112,6 @@ public:
                                  std::vector<double>& qValues) = 0;*/
 
 
-    //Alex : getApplicableActions has been removed
-    /*
     // Methods for action applicability and pruning
     virtual std::vector<int> getApplicableActions(State const& state) const = 0;
 
@@ -127,7 +125,7 @@ public:
         }
         return result;
     }
-    */
+
 
     /*****************************************************************
                         Calculation of reward
@@ -286,9 +284,9 @@ public:
     //static FinalRewardCalculationMethod finalRewardCalculationMethod;
     //static std::vector<int> candidatesForOptimalFinalAction;
 
-    //Alex :getApplicableActions is removed then this attribute is useless
+
     // Is true if applicable actions should be cached
-    //static bool cacheApplicableActions;
+    static bool cacheApplicableActions;
 
     // Is true if a reward lock was detected in the training phase
 		//Murugeswari
@@ -377,16 +375,13 @@ public:
     // Cache for state values of solved states
     static StateValueHashMap stateValueCache;
 
-    //Alex : only used to get applicable actions then if getApplicableActions is not needed, this attribute is not needed too
     // Cache for applicable reasonable actions
-    //static ActionHashMap applicableActionsCache;
+    static ActionHashMap applicableActionsCache;
 
     /*****************************************************************
                  Calculation of applicable actions
     *****************************************************************/
 
-    //Alex : getApplicableActions is not needed
-    /*
 
     // Returns a vector ("res") that encodes applicable and reasonable actions.
     // If res[i] = i, the action with index i is applicable, and if res[i] = -1
@@ -429,7 +424,6 @@ public:
                 }
             } else { */
 
-    /* Alex : removal of getApplicableActions 
 
                 for (size_t index = 0; index < numberOfActions; ++index) {
                     if (actionIsApplicable(actionStates[index], state)) {
@@ -447,7 +441,7 @@ public:
 
         return res;
     }
-*/
+
 
 //Murugeswari
 //protected:

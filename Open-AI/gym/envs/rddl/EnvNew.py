@@ -125,7 +125,7 @@ if __name__ == '__main__':
 	#ENV = gym.make('RDDL-v1')
 	#ENV.seed(0)
         problem_list = ["game_of_life","navigation","sysadmin","tamarisk"]
-	NUM_EPISODES = 100
+	NUM_EPISODES = 10000
         for prob in problem_list :
                 for j in range(10) :
                         ENV = RDDLEnv(prob, str(j+1))
@@ -154,7 +154,7 @@ if __name__ == '__main__':
                         print('\n')
                         print('#########################################################################')
                         print('##problem : {}_inst_mdp__{}##' .format(prob, j+1))
-                        print('time average : {} for a run over {} episodes' .format(time_sum/NUM_EPISODES, NUM_EPISODES))
+                        print('time average : {} sec for a run over {} episodes' .format(time_sum/NUM_EPISODES, NUM_EPISODES))
                         print('reward average : {}' .format(reward_sum/NUM_EPISODES))
                         ENV._close()
                         print('#########################################################################')

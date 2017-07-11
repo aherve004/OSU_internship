@@ -457,10 +457,9 @@ public:
         }
     }
     */
-    std::pair<double, double> sample(int varIndex,
-                                     std::vector<int> const& blacklist = {}) {
+    std::pair<double, double> sample(int varIndex/*, std::vector<int> const& blacklist = {}*/) { //Alex : blacklist removal
         DiscretePD& pd = probabilisticStateFluentsAsPD[varIndex];
-        std::pair<double, double> outcome = pd.sample(blacklist);
+        std::pair<double, double> outcome = pd.sample(/*blacklist*/); //Alex : blacklist removal
         probabilisticStateFluent(varIndex) = outcome.first;
         return outcome;
     }
