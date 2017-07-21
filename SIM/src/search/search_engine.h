@@ -136,14 +136,34 @@ public:
 public:
     // Calculate the reward (since the reward must be deteriministic, this is
     // identical for probabilistic and deterministic search engines)
-    void calcReward(State const& current, int const& actionIndex,
-                    double& reward) const {
-        rewardCPF->evaluate(reward, current, actionStates[actionIndex]);
+    //void calcReward(State const& current, int const& actionIndex, double& reward) conts { //Alex change actionIndex to actionVector
+    //void calcReward(State const& current, std::vector<int> const& actionVector, double& reward) const {
+    void calcReward(State const& current, ActionState const& action, double& reward) const {
+      //Alex display
+      /*for( int i=0 ; i<actionStates.size() ; i++){
+	for(int j=0 ; j<actionStates[i].state.size() ; j++){
+	  std::cout<<actionStates[i].state[j]<<" ";
+	}
+	std::cout<<std::endl;
+	}*/
+
+      //change actionState //TO CHANGE actionState must not be modifiy here but somewhere else
+      /*
+      std::vector<ActionFluent*> scheduled;
+      std::vector<DeterministicEvaluatable*> prec;
+      ActionState action(0, actionVector, scheduled,  prec);
+      */
+      //Alex end
+
+      //rewardCPF->evaluate(reward, current, actionStates[actionIndex]; //Alex change actionstate
+      rewardCPF->evaluate(reward, current, action);
+      //printRewardCPFInDetail(std::cout);
     }
 
 		//Murugeswari
-    virtual void calcSuccessorState(State const& current, int const& actionIndex,
-                            PDState& next) const {}
+    //virtual void calcSuccessorState(State const& current, int const& actionIndex, PDState& next) const {} //Alex change actionIndex to actionVector
+    //virtual void calcSuccessorState(State const& current, std::vector<int> const& actionVector, PDState& next) const {}
+    virtual void calcSuccessorState(State const& current, ActionState const& action, PDState& next) const {}
 
 		//Murugeswari
 		/*
@@ -240,7 +260,7 @@ public:
     // Action fluents and action states
     static std::vector<ActionFluent*> actionFluents;
     static std::vector<ActionState> actionStates;
-
+    //static ActionState aState;//Alex : the ActionState we modify to create an action with the vector of int
 
     // State fluents
     static std::vector<StateFluent*> stateFluents;
@@ -451,22 +471,29 @@ public:
     *****************************************************************/
 
     // Apply action 'actionIndex' to 'current', resulting in 'next'
-    void calcSuccessorState(State const& current, int const& actionIndex,
-                            PDState& next) const {
+    //void calcSuccessorState(State const& current, std::vector<int> const& actionVector, PDState& next) const { //Alex change actionIndex to actionVector, modification of actionState
+    //void calcSuccessorState(State const& current, std::vector<int> const& actionVector, PDState& next) const {
+    void calcSuccessorState(State const& current, ActionState const& action, PDState& next) const {
 
 
-        for (int index = 0; index < State::numberOfDeterministicStateFluents;
+      //Alex change actionState //TO CHANGE actionState must not be modifiy here but somewhere else
+      /*
+      std::vector<ActionFluent*> scheduled;
+      std::vector<DeterministicEvaluatable*> prec;
+      ActionState action(0, actionVector, scheduled,  prec);
+      */
+      //Alex end
+
+      for (int index = 0; index < State::numberOfDeterministicStateFluents;
              ++index) {
-            deterministicCPFs[index]->evaluate(
-                next.deterministicStateFluent(index), current,
-                actionStates[actionIndex]);
-        }
+	//deterministicCPFs[index]->evaluate( next.deterministicStateFluent(index), current, actionStates[actionIndex]); //Alex change actionState
+	deterministicCPFs[index]->evaluate( next.deterministicStateFluent(index), current, action);
+      }
 
         for (int index = 0; index < State::numberOfProbabilisticStateFluents;
              ++index) {
-            probabilisticCPFs[index]->evaluate(
-                next.probabilisticStateFluentAsPD(index), current,
-                actionStates[actionIndex]);
+	  //probabilisticCPFs[index]->evaluate( next.probabilisticStateFluentAsPD(index), current, actionStates[actionIndex]);//Alex change actionSttae
+	  probabilisticCPFs[index]->evaluate( next.probabilisticStateFluentAsPD(index), current, action);
         }
 
     }

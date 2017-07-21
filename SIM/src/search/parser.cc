@@ -272,6 +272,9 @@ void Parser::parseActionFluent(stringstream& desc) const {
         assert(val == j);
         values.push_back(value);
     }
+    //Alex : display for testing
+    std::cout<<index<<" "<<name<<std::endl;
+
     SearchEngine::actionFluents.push_back(
         new ActionFluent(index, name, values));
 }
@@ -525,10 +528,15 @@ void Parser::parseActionState(stringstream& desc) const {
 
     for (size_t j = 0; j < SearchEngine::actionFluents.size(); ++j) {
         desc >> values[j];
+
+	//cout<<values[j]<<endl; //Alex : display
+
         if (values[j] == 1) {
             scheduledActionFluents.push_back(SearchEngine::actionFluents[j]);
+	    cout<<j<<" "<<SearchEngine::actionFluents[j]->name<<endl; //Alex display
         }
     }
+    cout<<endl;
 
     int numberOfRelevantPreconditions;
     desc >> numberOfRelevantPreconditions;

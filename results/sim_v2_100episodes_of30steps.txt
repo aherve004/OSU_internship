@@ -1,0 +1,720 @@
+Parsing...
+...finished (0.00356507s).
+Writing output...
+...finished (0.107679s).  game_of_life_inst_mdp__1
+done ... total time: 2.14032s
+parsed
+Parsing ... ./rddl/parsed/game_of_life_inst_mdp__1
+Done
+Parsing...
+...finished (0.00282788s).
+Writing output...
+...finished (0.097167s).  game_of_life_inst_mdp__2
+done ... total time: 2.11721s
+
+
+#########################################################################
+##problem : game_of_life_inst_mdp__1 : 100 episodes of 30 steps##
+average step time: 0.000713541666667 sec 
+average reward for an episode: 59.71
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/game_of_life_inst_mdp__2
+Done
+Parsing...
+...finished (0.00422001s).
+Writing output...
+...finished (0.101838s).  game_of_life_inst_mdp__3
+done ... total time: 2.12201s
+
+
+#########################################################################
+##problem : game_of_life_inst_mdp__2 : 100 episodes of 30 steps##
+average step time: 0.0008125 sec 
+average reward for an episode: 70.48
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/game_of_life_inst_mdp__3
+Done
+Parsing...
+...finished (0.00427794s).
+Writing output...
+...finished (0.19737s).  game_of_life_inst_mdp__4
+done ... total time: 2.23576s
+
+
+#########################################################################
+##problem : game_of_life_inst_mdp__3 : 100 episodes of 30 steps##
+average step time: 0.000822916666667 sec 
+average reward for an episode: 102.21
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/game_of_life_inst_mdp__4
+Done
+Parsing...
+...finished (0.00393701s).
+Writing output...
+...finished (0.167205s).  game_of_life_inst_mdp__5
+done ... total time: 2.20409s
+
+
+#########################################################################
+##problem : game_of_life_inst_mdp__4 : 100 episodes of 30 steps##
+average step time: 0.000859375 sec 
+average reward for an episode: 136.23
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/game_of_life_inst_mdp__5
+Done
+Parsing...
+...finished (0.00415587s).
+Writing output...
+...finished (0.156169s).  game_of_life_inst_mdp__6
+done ... total time: 2.19253s
+
+
+#########################################################################
+##problem : game_of_life_inst_mdp__5 : 100 episodes of 30 steps##
+average step time: 0.000833333333333 sec 
+average reward for an episode: 193.0
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/game_of_life_inst_mdp__6
+Done
+Parsing...
+...finished (0.00556684s).
+Writing output...
+...finished (0.290392s).  game_of_life_inst_mdp__7
+done ... total time: 2.36671s
+
+
+#########################################################################
+##problem : game_of_life_inst_mdp__6 : 100 episodes of 30 steps##
+average step time: 0.000901041666667 sec 
+average reward for an episode: 224.71
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/game_of_life_inst_mdp__7
+Done
+Parsing...
+...finished (0.00775313s).
+Writing output...
+...finished (0.296399s).  game_of_life_inst_mdp__8
+done ... total time: 2.39523s
+
+
+#########################################################################
+##problem : game_of_life_inst_mdp__7 : 100 episodes of 30 steps##
+average step time: 0.00105729166667 sec 
+average reward for an episode: 248.79
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/game_of_life_inst_mdp__8
+Done
+Parsing...
+...finished (0.00606394s).
+Writing output...
+...finished (0.322815s).  game_of_life_inst_mdp__9
+done ... total time: 2.39317s
+
+
+#########################################################################
+##problem : game_of_life_inst_mdp__8 : 100 episodes of 30 steps##
+average step time: 0.00105208333333 sec 
+average reward for an episode: 294.3
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/game_of_life_inst_mdp__9
+Done
+Parsing...
+...finished (0.0062151s).
+Writing output...
+...finished (0.320034s).  game_of_life_inst_mdp__10
+done ... total time: 2.40845s
+
+
+#########################################################################
+##problem : game_of_life_inst_mdp__9 : 100 episodes of 30 steps##
+average step time: 0.00103125 sec 
+average reward for an episode: 326.9
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/game_of_life_inst_mdp__10
+Done
+Parsing...
+...finished (0.00322008s).
+Writing output...
+...finished (0.0841241s).  navigation_inst_mdp__1
+done ... total time: 2.10575s
+
+
+#########################################################################
+##problem : game_of_life_inst_mdp__10 : 100 episodes of 30 steps##
+average step time: 0.001109375 sec 
+average reward for an episode: 197.57
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/navigation_inst_mdp__1
+Done
+Parsing...
+...finished (0.00326109s).
+Writing output...
+...finished (0.127033s).  navigation_inst_mdp__2
+done ... total time: 2.15111s
+
+
+#########################################################################
+##problem : navigation_inst_mdp__1 : 100 episodes of 30 steps##
+average step time: 0.000661458333333 sec 
+average reward for an episode: -38.42
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/navigation_inst_mdp__2
+Done
+Parsing...
+...finished (0.00258803s).
+Writing output...
+...finished (0.135086s).  navigation_inst_mdp__3
+done ... total time: 2.16081s
+
+
+#########################################################################
+##problem : navigation_inst_mdp__2 : 100 episodes of 30 steps##
+average step time: 0.0006875 sec 
+average reward for an episode: -39.02
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/navigation_inst_mdp__3
+Done
+Parsing...
+...finished (0.003407s).
+Writing output...
+...finished (0.182504s).  navigation_inst_mdp__4
+done ... total time: 2.22857s
+
+
+#########################################################################
+##problem : navigation_inst_mdp__3 : 100 episodes of 30 steps##
+average step time: 0.00075 sec 
+average reward for an episode: -39.95
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/navigation_inst_mdp__4
+Done
+Parsing...
+...finished (0.00370908s).
+Writing output...
+...finished (0.200826s).  navigation_inst_mdp__5
+done ... total time: 2.24626s
+
+
+#########################################################################
+##problem : navigation_inst_mdp__4 : 100 episodes of 30 steps##
+average step time: 0.000895833333333 sec 
+average reward for an episode: -40.0
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/navigation_inst_mdp__5
+Done
+Parsing...
+...finished (0.00413799s).
+Writing output...
+...finished (0.257089s).  navigation_inst_mdp__6
+done ... total time: 2.32873s
+
+
+#########################################################################
+##problem : navigation_inst_mdp__5 : 100 episodes of 30 steps##
+average step time: 0.000776041666667 sec 
+average reward for an episode: -39.74
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/navigation_inst_mdp__6
+Done
+Parsing...
+...finished (0.00341606s).
+Writing output...
+...finished (0.266333s).  navigation_inst_mdp__7
+done ... total time: 2.35603s
+
+
+#########################################################################
+##problem : navigation_inst_mdp__6 : 100 episodes of 30 steps##
+average step time: 0.00127083333333 sec 
+average reward for an episode: -39.67
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/navigation_inst_mdp__7
+Done
+Parsing...
+...finished (0.00380206s).
+Writing output...
+...finished (0.34448s).  navigation_inst_mdp__8
+done ... total time: 2.47497s
+
+
+#########################################################################
+##problem : navigation_inst_mdp__7 : 100 episodes of 30 steps##
+average step time: 0.0013125 sec 
+average reward for an episode: -40.0
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/navigation_inst_mdp__8
+Done
+Parsing...
+...finished (0.00367904s).
+Writing output...
+...finished (0.387978s).  navigation_inst_mdp__9
+done ... total time: 2.59267s
+
+
+#########################################################################
+##problem : navigation_inst_mdp__8 : 100 episodes of 30 steps##
+average step time: 0.001046875 sec 
+average reward for an episode: -38.75
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/navigation_inst_mdp__9
+Done
+Parsing...
+...finished (0.00433302s).
+Writing output...
+...finished (0.46575s).  navigation_inst_mdp__10
+done ... total time: 2.74923s
+
+
+#########################################################################
+##problem : navigation_inst_mdp__9 : 100 episodes of 30 steps##
+average step time: 0.001328125 sec 
+average reward for an episode: -40.0
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/navigation_inst_mdp__10
+Done
+Parsing...
+...finished (0.00179815s).
+Writing output...
+...finished (0.091012s).  sysadmin_inst_mdp__1
+done ... total time: 2.10487s
+
+
+#########################################################################
+##problem : navigation_inst_mdp__10 : 100 episodes of 30 steps##
+average step time: 0.0016875 sec 
+average reward for an episode: -40.0
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/sysadmin_inst_mdp__1
+Done
+Parsing...
+...finished (0.00228906s).
+Writing output...
+...finished (0.088105s).  sysadmin_inst_mdp__2
+done ... total time: 2.10494s
+
+
+#########################################################################
+##problem : sysadmin_inst_mdp__1 : 100 episodes of 30 steps##
+average step time: 0.000666666666667 sec 
+average reward for an episode: 219.6875
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/sysadmin_inst_mdp__2
+Done
+Parsing...
+...finished (0.00294685s).
+Writing output...
+...finished (0.197281s).  sysadmin_inst_mdp__3
+done ... total time: 2.22543s
+
+
+#########################################################################
+##problem : sysadmin_inst_mdp__2 : 100 episodes of 30 steps##
+average step time: 0.000661458333333 sec 
+average reward for an episode: 169.3875
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/sysadmin_inst_mdp__3
+Done
+Parsing...
+...finished (0.00290203s).
+Writing output...
+...finished (0.228581s).  sysadmin_inst_mdp__4
+done ... total time: 2.2599s
+
+
+#########################################################################
+##problem : sysadmin_inst_mdp__3 : 100 episodes of 30 steps##
+average step time: 0.000765625 sec 
+average reward for an episode: 341.665
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/sysadmin_inst_mdp__4
+Done
+Parsing...
+...finished (0.00295186s).
+Writing output...
+...finished (0.3523s).  sysadmin_inst_mdp__5
+done ... total time: 2.39064s
+
+
+#########################################################################
+##problem : sysadmin_inst_mdp__4 : 100 episodes of 30 steps##
+average step time: 0.000765625 sec 
+average reward for an episode: 311.3175
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/sysadmin_inst_mdp__5
+Done
+Parsing...
+...finished (0.00452805s).
+Writing output...
+...finished (0.331693s).  sysadmin_inst_mdp__6
+done ... total time: 2.38696s
+
+
+#########################################################################
+##problem : sysadmin_inst_mdp__5 : 100 episodes of 30 steps##
+average step time: 0.000838541666667 sec 
+average reward for an episode: 450.8825
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/sysadmin_inst_mdp__6
+Done
+Parsing...
+...finished (0.00325084s).
+Writing output...
+...finished (0.469959s).  sysadmin_inst_mdp__7
+done ... total time: 2.53825s
+
+
+#########################################################################
+##problem : sysadmin_inst_mdp__6 : 100 episodes of 30 steps##
+average step time: 0.000838541666667 sec 
+average reward for an episode: 395.325
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/sysadmin_inst_mdp__7
+Done
+Parsing...
+...finished (0.00404906s).
+Writing output...
+...finished (0.585918s).  sysadmin_inst_mdp__8
+done ... total time: 2.66191s
+
+
+#########################################################################
+##problem : sysadmin_inst_mdp__7 : 100 episodes of 30 steps##
+average step time: 0.000942708333333 sec 
+average reward for an episode: 519.2725
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/sysadmin_inst_mdp__8
+Done
+Parsing...
+...finished (0.00416994s).
+Writing output...
+...finished (1.41157s).  sysadmin_inst_mdp__9
+done ... total time: 3.53284s
+
+
+#########################################################################
+##problem : sysadmin_inst_mdp__8 : 100 episodes of 30 steps##
+average step time: 0.0011875 sec 
+average reward for an episode: 416.0875
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/sysadmin_inst_mdp__9
+Done
+Parsing...
+...finished (0.00689602s).
+Writing output...
+...finished (1.02137s).  sysadmin_inst_mdp__10
+done ... total time: 3.21992s
+
+
+#########################################################################
+##problem : sysadmin_inst_mdp__9 : 100 episodes of 30 steps##
+average step time: 0.00105208333333 sec 
+average reward for an episode: 628.8975
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/sysadmin_inst_mdp__10
+Done
+Parsing...
+...finished (0.00489402s).
+Writing output...
+...finished (0.13145s).  tamarisk_inst_mdp__1
+done ... total time: 2.24051s
+
+
+#########################################################################
+##problem : sysadmin_inst_mdp__10 : 100 episodes of 30 steps##
+average step time: 0.00108854166667 sec 
+average reward for an episode: 488.6675
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/tamarisk_inst_mdp__1
+Done
+Parsing...
+...finished (0.00533819s).
+Writing output...
+...finished (0.228865s).  tamarisk_inst_mdp__2
+done ... total time: 2.36009s
+
+
+#########################################################################
+##problem : tamarisk_inst_mdp__1 : 100 episodes of 30 steps##
+average step time: 0.000895833333333 sec 
+average reward for an episode: -608.9587
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/tamarisk_inst_mdp__2
+Done
+Parsing...
+...finished (0.00336409s).
+Writing output...
+...finished (0.182923s).  tamarisk_inst_mdp__3
+done ... total time: 2.32215s
+
+
+#########################################################################
+##problem : tamarisk_inst_mdp__2 : 100 episodes of 30 steps##
+average step time: 0.001125 sec 
+average reward for an episode: -941.4111
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/tamarisk_inst_mdp__3
+Done
+Parsing...
+...finished (0.00586081s).
+Writing output...
+...finished (0.229818s).  tamarisk_inst_mdp__4
+done ... total time: 2.5547s
+
+
+#########################################################################
+##problem : tamarisk_inst_mdp__3 : 100 episodes of 30 steps##
+average step time: 0.0009375 sec 
+average reward for an episode: -818.8054
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/tamarisk_inst_mdp__4
+Done
+Parsing...
+...finished (0.00337315s).
+Writing output...
+...finished (0.203152s).  tamarisk_inst_mdp__5
+done ... total time: 2.44763s
+
+
+#########################################################################
+##problem : tamarisk_inst_mdp__4 : 100 episodes of 30 steps##
+average step time: 0.001109375 sec 
+average reward for an episode: -1176.2895
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/tamarisk_inst_mdp__5
+Done
+Parsing...
+...finished (0.00447798s).
+Writing output...
+...finished (0.293308s).  tamarisk_inst_mdp__6
+done ... total time: 2.93267s
+
+
+#########################################################################
+##problem : tamarisk_inst_mdp__5 : 100 episodes of 30 steps##
+average step time: 0.00101041666667 sec 
+average reward for an episode: -1247.9815
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/tamarisk_inst_mdp__6
+Done
+Parsing...
+...finished (0.00541615s).
+Writing output...
+...finished (0.237993s).  tamarisk_inst_mdp__7
+done ... total time: 2.84914s
+
+
+#########################################################################
+##problem : tamarisk_inst_mdp__6 : 100 episodes of 30 steps##
+average step time: 0.00138541666667 sec 
+average reward for an episode: -1414.3609
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/tamarisk_inst_mdp__7
+Done
+Parsing...
+...finished (0.00527406s).
+Writing output...
+...finished (0.284347s).  tamarisk_inst_mdp__8
+done ... total time: 3.53957s
+
+
+#########################################################################
+##problem : tamarisk_inst_mdp__7 : 100 episodes of 30 steps##
+average step time: 0.00104166666667 sec 
+average reward for an episode: -1428.0271
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/tamarisk_inst_mdp__8
+Done
+Parsing...
+...finished (0.00529599s).
+Writing output...
+...finished (0.242081s).  tamarisk_inst_mdp__9
+done ... total time: 2.95687s
+
+
+#########################################################################
+##problem : tamarisk_inst_mdp__8 : 100 episodes of 30 steps##
+average step time: 0.00116145833333 sec 
+average reward for an episode: -1647.7506
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/tamarisk_inst_mdp__9
+Done
+Parsing...
+...finished (0.00379014s).
+Writing output...
+...finished (0.402736s).  tamarisk_inst_mdp__10
+done ... total time: 3.97638s
+
+
+#########################################################################
+##problem : tamarisk_inst_mdp__9 : 100 episodes of 30 steps##
+average step time: 0.001046875 sec 
+average reward for an episode: -1527.448
+Environment Closed
+#########################################################################
+
+
+parsed
+Parsing ... ./rddl/parsed/tamarisk_inst_mdp__10
+Done
+
+
+#########################################################################
+##problem : tamarisk_inst_mdp__10 : 100 episodes of 30 steps##
+average step time: 0.00128125 sec 
+average reward for an episode: -1785.008
+Environment Closed
+#########################################################################
+
+

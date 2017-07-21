@@ -526,7 +526,6 @@ void RDDLTask::print(std::ostream& out) {
             out << actionIndex << " "
                 << CPFs[index]->actionHashKeyMap[actionIndex] << std::endl;
         }
-
         out << std::endl;
     }
 
@@ -626,14 +625,14 @@ void RDDLTask::print(std::ostream& out) {
 	*///Alex : end
 
         out << "## action hash keys" << std::endl;
-        for (unsigned int actionIndex = 0;
+
+	for (unsigned int actionIndex = 0;
              actionIndex < actionPreconds[index]->actionHashKeyMap.size();
              ++actionIndex) {
             out << actionIndex << " "
                 << actionPreconds[index]->actionHashKeyMap[actionIndex]
                 << std::endl;
-        }
-
+	}
         out << std::endl;
     }
 
@@ -643,10 +642,18 @@ void RDDLTask::print(std::ostream& out) {
         out << "## index" << std::endl;
         out << index << std::endl;
         out << "## state" << std::endl;
-        for (unsigned int varIndex = 0;
+
+	//Alex change to inverse the actionState storage order
+        /*for (unsigned int varIndex = 0;
              varIndex < actionStates[index].state.size(); ++varIndex) {
             out << actionStates[index][varIndex] << " ";
+	    }*/
+	for (int varIndex = actionStates[index].state.size() - 1;
+             varIndex >= 0; --varIndex) {
+            out << actionStates[index][varIndex] << " ";
         }
+	//Alex : end
+	
         out << std::endl;
         out << "## relevant preconditions" << std::endl;
         out << actionStates[index].relevantSACs.size() << std::endl;

@@ -49,6 +49,7 @@ string SearchEngine::taskName;
 //vector<State> SearchEngine::trainingSet;
 
 vector<ActionState> SearchEngine::actionStates;
+//ActionState SearchEngine::aState;//Alex : the ActionState we modify to create an action with the vector of int
 
 vector<ActionFluent*> SearchEngine::actionFluents;
 vector<StateFluent*> SearchEngine::stateFluents;

@@ -45,38 +45,62 @@ void parse(char* pfile) {
 
 
 //Simulate action a on state s and return s'
-double step(double s[], int n, int a) {
+double step(double s[], int n, int a[], int m) {
 	if (!parseFunctionCalled) return -10000.0;
 
 	vector<double> v(s, s+n);
 	PDState current = State(v, SearchEngine::horizon);
 
+	//Alex : change action to an action vector
+	vector<int> actionVector(a,a+m);
+	vector<DeterministicEvaluatable*> prec;
+	ActionState aState(0, actionVector, libSearchEngine->actionFluents, prec);
+
+
+	//Alex test to change actionIndexSystem
+	/*
 	int actionIndex = 0;
 	if (a > 0) {
 		actionIndex = (SearchEngine::actionFluents).size() - a + 1;
 	}
-	
+	*/
+	/*
+	int actionIndex = 0;
+	if (a>0){
+	  actionIndex = a;
+	  }*/
+	//end
+
 	//Display action for debug
 	/*cout << "action : ";
 	(libSearchEngine->actionStates[actionIndex]).printCompact(cout);
+	cout<<libSearchEngine->actionStates[actionIndex].index<<" aF:"<<libSearchEngine->actionFluents[actionIndex]->index<<":"<<libSearchEngine->actionFluents[actionIndex]->name<<endl;
 	cout << endl;
 	*/
 
 	//Check the preconditions, Alex
+	/*
 	if(!libSearchEngine->actionIsApplicable(SearchEngine::actionStates[actionIndex], current)){
-	  return -9999; //We may return an error instead of a reward 
-	}
+	  return -9999.9; //We may return an error instead of a reward 
+	  }*/
+
+	//Display statefluents
+	current.printCompact(cout);
+	cout<<endl;
 
 	//Compute Reward
 	double reward = 0;
-	libSearchEngine->calcReward(current, actionIndex, reward);
-
+	//libSearchEngine->calcReward(current, actionIndex, reward);//Alex : change actionIndex to actionVector
+	//libSearchEngine->calcReward(current, actionVector, reward);
+	libSearchEngine->calcReward(current, aState, reward);
+	
 	//Get next state s'
 	PDState next;
 	
+	//libSearchEngine->calcSuccessorState(current, actionIndex, next);//Alex : change actionIndex to actionVector
+	//libSearchEngine->calcSuccessorState(current, actionVector, next);	
+	libSearchEngine->calcSuccessorState(current, aState, next);
 
-	libSearchEngine->calcSuccessorState(current, actionIndex, next);
-	
 	//Sample
 	for (unsigned int i = 0; i < State::numberOfProbabilisticStateFluents; ++i) {
 		next.sample(i);
@@ -90,10 +114,13 @@ double step(double s[], int n, int a) {
 		s[j+State::numberOfDeterministicStateFluents] = next.probabilisticStateFluent(j);
 	}
 
+	//Display statefluents
+	next.printCompact(cout);
+	
 	return reward;
 }
 
-
+/*
 //Set internal State
 void setInternalState(double s[], int n) {
 	vector<double> v(s, s+n);
@@ -127,7 +154,7 @@ double next(int a) {
 
 	return reward;
 }
-
+*/
 
 
 int main(int argc, char** argv) {
@@ -135,14 +162,34 @@ int main(int argc, char** argv) {
 			1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
 			1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
   */
-  double s[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+  //double s[] = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
+  double s[] = {0, 0, 0, 0, 0 ,0 ,0, 0, 0, 0};
   int n = end(s) - begin(s);
+  int a[] = {0, 0, 1, 0, 1, 0, 1, 0, 0, 0};
+  int m = end(a) - begin(a);
   parse(argv[1]);
   printf("parser ended\n");
+
+  printf("\nstateFluents :\n");
+  for(int i=0 ; i<libSearchEngine->stateFluents.size() ; i++){
+    std::cout<<libSearchEngine->stateFluents[i]->index<<":"<<libSearchEngine->stateFluents[i]->name<<" ";
+  }
+  printf("\n\n");
+  //printf("\nActionStates\n");
+
+  /* ->segfault
+  for(int i=0 ; i<libSearchEngine->stateFluents.size() ; i++){
+    std::cout<<libSearchEngine->actionStates[0].scheduledActionFluents[i]->index<<":"<<libSearchEngine->actionStates[0].scheduledActionFluents[i]->name<<" ";
+  }
+  printf("\n");
+  */
+
+  
   for (int i=0; i<n+1; i++) {
     printf("\nstep %d\n", i);
-    cout << step(s, n, i) << endl;
-  }
+    cout << step(s, n, a,m) << endl;
+    }
+  //cout<<step(s,n,a,m)<<endl;
   
   /*  setInternalState(s, n);
   for (int i=0; i<n+1; i++) {
