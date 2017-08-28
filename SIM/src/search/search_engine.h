@@ -209,12 +209,23 @@ public:
     bool actionIsApplicable(ActionState const& action,
                             State const& current) const {
         double res = 0.0;
+	//Alex : is now evaluating actionPreconditions from SearchEngine instead of the preconditions of the actionState
+	/*
         for (DeterministicEvaluatable* precond : action.actionPreconditions) {
             precond->evaluate(res, current, action);
             if (MathUtils::doubleIsEqual(res, 0.0)) {
                 return false;
             }
         }
+	*/
+        for (DeterministicEvaluatable* precond : actionPreconditions) {
+            precond->evaluate(res, current, action);
+            if (MathUtils::doubleIsEqual(res, 0.0)) {
+                return false;
+            }
+        }	
+	//Alex end
+
         return true;
     }
 
@@ -316,6 +327,7 @@ public:
     //Alex : particularity of the prost with the reward locks but not needed in the project
     // The index of this action is used to check if a state is a goal
     //static int goalTestActionIndex;
+
 
 		//Murugeswari
     // The BDDs where dead ends and goals are cached
@@ -474,15 +486,6 @@ public:
     //void calcSuccessorState(State const& current, std::vector<int> const& actionVector, PDState& next) const { //Alex change actionIndex to actionVector, modification of actionState
     //void calcSuccessorState(State const& current, std::vector<int> const& actionVector, PDState& next) const {
     void calcSuccessorState(State const& current, ActionState const& action, PDState& next) const {
-
-
-      //Alex change actionState //TO CHANGE actionState must not be modifiy here but somewhere else
-      /*
-      std::vector<ActionFluent*> scheduled;
-      std::vector<DeterministicEvaluatable*> prec;
-      ActionState action(0, actionVector, scheduled,  prec);
-      */
-      //Alex end
 
       for (int index = 0; index < State::numberOfDeterministicStateFluents;
              ++index) {

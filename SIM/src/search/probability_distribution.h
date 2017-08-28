@@ -143,7 +143,7 @@ public:
 
     // Sample a value which is not blacklisted. Probability of blackisted values
     // is ignored
-    std::pair<double, double> sample(/*std::vector<int> const& blacklist = {}*/) const; //Alex blacklist removal
+    std::pair<double, double> sample(double randomSeq[], int randomSeqIndex/*std::vector<int> const& blacklist = {}*/) const; //Alex blacklist removal
 
     std::vector<double> values;
     std::vector<double> probabilities;
