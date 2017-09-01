@@ -374,7 +374,7 @@ NONE
 ## index
 1
 ## state
-0 0 0 1 
+1 0 0 0 
 ## relevant preconditions
 0
 
@@ -382,7 +382,7 @@ NONE
 ## index
 2
 ## state
-0 0 1 0 
+0 1 0 0 
 ## relevant preconditions
 0
 
@@ -390,7 +390,7 @@ NONE
 ## index
 3
 ## state
-0 1 0 0 
+0 0 1 0 
 ## relevant preconditions
 0
 
@@ -398,7 +398,7 @@ NONE
 ## index
 4
 ## state
-1 0 0 0 
+0 0 0 1 
 ## relevant preconditions
 0
 

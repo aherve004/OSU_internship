@@ -39,7 +39,7 @@ void DiscretePD::print(ostream& out) const {
     out << "]" << endl;
 }
 
-pair<double, double> DiscretePD::sample(double randomSeq[], int randomSeqIndex/*vector<int> const& blacklist*/) const { //Alex : blacklist removal
+pair<double, double> DiscretePD::sample(/*vector<int> const& blacklist*/) const { //Alex : blacklist removal
     assert(isWellDefined());
 
     //Alex : blacklist removal because not required
@@ -53,9 +53,8 @@ pair<double, double> DiscretePD::sample(double randomSeq[], int randomSeqIndex/*
     double randNum = MathUtils::rnd->genDouble(0.0, remainingProbSum);
     */
 
-    //double randNum = MathUtils::rnd->genDouble(0.0, 1.0); //Alex : remainingProbSum replaced by the initial value
+    double randNum = MathUtils::rnd->genDouble(0.0, 1.0); //Alex : remainingProbSum replaced by the initial value
 
-    double randNum = randomSeq[randomSeqIndex%20]; //Alex use the randomSeq to be able to have the same random number in two different versions so as to compare them
 
     double probSum = 0.0;
 

@@ -76,7 +76,6 @@ class RDDLEnv() :
 
 	# Take a real step in the environment. Current state changes.
 	def _step(self, action_var) :
-                print("step start")
 		# Convert state and action to c-types
 		s = self.state
 		ss = s.tolist()
@@ -90,13 +89,14 @@ class RDDLEnv() :
 		self.state = np.array(sss, dtype=np.int8)
 		self.reward = self.reward + reward
 
+                #Alex : comment this because I was already creating episodes below
 		# Advance time step
 		#self.tstep = self.tstep + 1
 		#if self.tstep > self.horizon:
 		#	self.done = True
 
-                self.done = True
-                print("step end")
+                self.done = True #Alex : if using the paragraph above, this line needs to be commented
+
 		return self.state, reward, self.done, {}
 
 
@@ -131,14 +131,12 @@ if __name__ == '__main__':
 	#ENV = gym.make('RDDL-v1')
 	#ENV.seed(0)
         random.seed(42)#set the random seed so as to be able to have the same random action in the different version for a comparaison
-        #problem_list = ["game_of_life","navigation","sysadmin","tamarisk"]
-        problem_list = ["navigation"]
-	NUM_EPISODES = 5
+        problem_list = ["game_of_life","navigation","sysadmin","tamarisk"]
+	NUM_EPISODES = 100
         NUM_STEPS = 30
         for prob in problem_list :
                 for j in range(10) :
                         ENV = RDDLEnv(prob, str(j+1))
-                        #ENV = RDDLEnv("navigation", "1")
 
                         time_sum = 0.0
                         reward_sum = 0.0
@@ -151,23 +149,19 @@ if __name__ == '__main__':
                                         ENV.done = False
                                         #while not done :
                                         #action = random.randint(0, ENV.num_action_vars) # choose a random actionindex #action is now an array of int
-                                        #action = 0
                                         #fill the action with random actionfluent
                                         action = []
                                         for l in range(ENV.num_action_vars):
                                                 action.append(random.randint(0,1))
+
                                         t0 = time.clock()
                                         nxt, rwd, done, _ = ENV._step(action) # next state and step reward
                                         t1 = time.clock() - t0
-                                        print('step time :{} reward:{}\n' .format(t1,rwd))
+                                        #print('step time :{} reward:{}\n' .format(t1,rwd))
                                         time_sum += t1
-                                        #time_sum += time.clock() - t0
-                                        #print('state: {}  action: {}  reward: {} next: {}'.format(curr, action, rwd, nxt))
+
                                         curr = nxt
                                         reward += rwd
-                                        #print('time to finish the while loop = {}' .format(time_sum))
-                                        #print('Episode Reward: {}'.format(reward))
-                                        #print()
                                 reward_sum += reward
                         print('\n')
                         print('#########################################################################')

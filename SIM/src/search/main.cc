@@ -68,35 +68,13 @@ double step(double s[], int n, int a[], int m) {
   ActionState aState(0, actionVector, scheduledActionFluents, libSearchEngine->actionPreconditions);
   
   //display of the action
+  /*
   cout<<"action: ";
   for(std::vector<int>::const_iterator i = actionVector.begin() ; i < actionVector.end() ; i++){
     cout<<*i<<" ";
   }
   cout<<endl;
-  
-  //Alex : set a randomSequence to force the random in sample so as to be able to compare two version
-  //Need to be remove at the end
-  randomSeq[0] = 0.840188;
-  randomSeq[1] = 0.394383;
-  randomSeq[2] = 0.783099;
-  randomSeq[3] = 0.798440;
-  randomSeq[4] = 0.911647;
-  randomSeq[5] = 0.197551;
-  randomSeq[6] = 0.335223;
-  randomSeq[7] = 0.553970;
-  randomSeq[8] = 0.768230;
-  randomSeq[9] = 0.277775;
-  randomSeq[10] = 0.31729;
-  randomSeq[11] = 0.005260;
-  randomSeq[12] = 0.934406;
-  randomSeq[13] = 0.654133;
-  randomSeq[14] = 0.997699;
-  randomSeq[15] = 0.217523;
-  randomSeq[16] = 0.557219;
-  randomSeq[17] = 0.744560;
-  randomSeq[18] = 0.138614;
-  randomSeq[19] = 0.604297;
-  //end
+  */
 
   //Alex test to change actionIndexSystem
   /*
@@ -115,17 +93,11 @@ double step(double s[], int n, int a[], int m) {
     }*/
 
   //Display statefluents
+  /*
   current.printCompact(cout);
   cout<<endl;
-
-  //TO BE removed
-  /*for(int i=0 ; i<11 ; i++){
-    for( int j=0 ; j<libSearchEngine->actionStates[i].state.size() ; j++){
-      cout<<libSearchEngine->actionStates[i].state[j]<< " ";
-    }
-    cout<<endl;
-  }
   */
+
   //Compute Reward
   double reward = 0;
   //libSearchEngine->calcReward(current, actionIndex, reward);//Alex : change actionIndex to actionState
@@ -139,8 +111,7 @@ double step(double s[], int n, int a[], int m) {
 
   //Sample
   for (unsigned int i = 0; i < State::numberOfProbabilisticStateFluents; ++i) {
-    next.sample(i, randomSeq, i);//alex: add of randomSeq to control the randomness of the sample (comparaison of versions)
-    //next.sample(i);
+    next.sample(i);
   }
 
   //Set s to s'
@@ -152,8 +123,10 @@ double step(double s[], int n, int a[], int m) {
   }
 
   //Display statefluents
+  /*
   next.printCompact(cout);
   cout<<endl;
+  */
 
   return reward;
 }
@@ -191,22 +164,34 @@ double next(int a) {
 	internalState = next;
 
 	return reward;
-}
+ }
 */
 
-void getActions(int* actions[], int a, int b){
+vector<vector<int>> getActions(double s[], int n){
+  //Create the current state
+  vector<double> v(s, s+n);
+  State current = State(v, SearchEngine::horizon);
 
+  //Define the vector of actions which is returned
+  vector<vector<int>> res;
+  //Calculate for each ActionState if it is applicable or not, returns a vector filled with the index of the ActionState if it is applicable else -1
+  vector<int> applActions = libSearchEngine->getApplicableActions(current);
+
+  //find the vectors of the applicable actions which need to be returned
+  for(int i=0 ; i<applActions.size() ; i++){
+    if(applActions[i]==i)
+      res.push_back(libSearchEngine->actionStates[i].state);
+  }
+  return res;
 }
 
 int main(int argc, char** argv) {
-  /*double s[] = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-			1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-			1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
-  */
+
+  //Must change the state s[] and action a[] according to the domain used
   //double s[] = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
-  double s[] = {0, 0, 0, 0, 0 ,0 ,0, 0, 0, 0};
+  double s[] = {0, 0, 0, 0, 0 ,0 ,0, 0, 0, 0}; //State for sysadmin_inst_1
   int n = end(s) - begin(s);
-  int a[] = {0, 0, 1, 0, 1, 0, 1, 0, 0, 0};
+  int a[] = {0, 0, 1, 0, 1, 0, 1, 0, 0, 0}; //Actionfor sysadmin_inst_1
   int m = end(a) - begin(a);
   parse(argv[1]);
   printf("parser ended\n");
@@ -217,27 +202,11 @@ int main(int argc, char** argv) {
     std::cout<<libSearchEngine->stateFluents[i]->index<<":"<<libSearchEngine->stateFluents[i]->name<<" ";
   }
   printf("\n\n");
-
-  //Alex : checking time spent in step
-  struct timeval *  t1 = NULL;
-  struct timeval * t2 = NULL;
-  gettimeofday(t1, NULL);
-
   
   for (int i=0; i<10000; i++) {
     //printf("\nstep %d\n", i);
-    step(s, n, a, m);
-    //cout << step(s, n, a,m) << endl;
-    //cout<<step(s,n)<<endl;
+    cout<<step(s, n, a, m)<<endl<<endl;
     }
-  //cout<<step(s,n,a,m)<<endl;
-
-  //Alex : checkin time
-  gettimeofday(t2, NULL);
-  printf("%ld seconds %ld microseconds\n", t2->tv_sec - t1->tv_sec, t2->tv_usec - t1->tv_usec);
-  
-
-
 
   
   /*  setInternalState(s, n);

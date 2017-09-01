@@ -139,21 +139,6 @@ public:
     //void calcReward(State const& current, int const& actionIndex, double& reward) conts { //Alex change actionIndex to actionVector
     //void calcReward(State const& current, std::vector<int> const& actionVector, double& reward) const {
     void calcReward(State const& current, ActionState const& action, double& reward) const {
-      //Alex display
-      /*for( int i=0 ; i<actionStates.size() ; i++){
-	for(int j=0 ; j<actionStates[i].state.size() ; j++){
-	  std::cout<<actionStates[i].state[j]<<" ";
-	}
-	std::cout<<std::endl;
-	}*/
-
-      //change actionState //TO CHANGE actionState must not be modifiy here but somewhere else
-      /*
-      std::vector<ActionFluent*> scheduled;
-      std::vector<DeterministicEvaluatable*> prec;
-      ActionState action(0, actionVector, scheduled,  prec);
-      */
-      //Alex end
 
       //rewardCPF->evaluate(reward, current, actionStates[actionIndex]; //Alex change actionstate
       rewardCPF->evaluate(reward, current, action);

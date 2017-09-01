@@ -474,6 +474,7 @@ void Preprocessor::calcAllActionStates(vector<ActionState>& result,
                                        int scheduledActions) const {
     if (result.empty()) {
         result.push_back(ActionState((int)task->actionFluents.size()));
+
     } else {
         int lastIndex = result.size();
 
